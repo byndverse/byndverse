@@ -40,13 +40,21 @@
 
   const logoWrap = document.querySelector('.logo-wrap');
   if (logoWrap) {
+    let isSpinning = false;
     logoWrap.addEventListener('click', () => {
-      if (logoWrap.classList.contains('spinning')) return;
-      logoWrap.classList.add('spinning');
-      logoWrap.addEventListener('animationend', () => {
-        logoWrap.classList.remove('spinning');
-        logoWrap.style.transform = '';
-      }, { once: true });
+      if (isSpinning) return;
+      isSpinning = true;
+      const anim = logoWrap.animate([
+        { transform: 'perspective(500px) rotateY(0deg)' },
+        { transform: 'perspective(500px) rotateY(90deg) scaleX(0.08)', offset: 0.15 },
+        { transform: 'perspective(500px) rotateY(180deg)',               offset: 0.30 },
+        { transform: 'perspective(500px) rotateY(270deg) scaleX(0.08)', offset: 0.45 },
+        { transform: 'perspective(500px) rotateY(360deg)',               offset: 0.60 },
+        { transform: 'perspective(500px) rotateY(450deg) scaleX(0.08)', offset: 0.75 },
+        { transform: 'perspective(500px) rotateY(540deg)',               offset: 0.90 },
+        { transform: 'perspective(500px) rotateY(720deg)' },
+      ], { duration: 900, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'none' });
+      anim.onfinish = () => { isSpinning = false; };
     });
   }
 })();
