@@ -37,4 +37,15 @@
   window.addEventListener('resize', resize);
   resize();
   raf = requestAnimationFrame(draw);
+
+  const logoWrap = document.querySelector('.logo-wrap');
+  if (logoWrap) {
+    logoWrap.addEventListener('click', () => {
+      if (logoWrap.classList.contains('spinning')) return;
+      logoWrap.classList.add('spinning');
+      logoWrap.addEventListener('animationend', () => {
+        logoWrap.classList.remove('spinning');
+      }, { once: true });
+    });
+  }
 })();
