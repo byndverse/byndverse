@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jay Salton — New Media Artist, Filmmaker & Musician. Creator of the Beyondverse. Psychedelic digital art for anyone seeking light." />
+  <title>Jay Salton | Beyondverse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <main class="container">
+    <div class="profile">
+      <div class="logo-wrap">
+        <img
+          src="assets/logo.png"
+          alt="Byndverse logo"
+          class="logo"
+          onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';"
+        />
+        <div class="logo-fallback" aria-hidden="true">
+          <span class="logo-fallback-letter">B</span>
+        </div>
+      </div>
+
+      <h1 class="name">Jay Salton</h1>
+      <p class="handle">@beluxbeyond</p>
+
+      <p class="bio">
+        New Media Artist · Filmmaker · Musician<br />
+        <span class="bio-tagline">Creator of the Beyondverse</span> — a surreal, psychedelic universe built from darkness and transformed into light. Dream farmer · soul gardener · intergalactic tour guide. I make art so no one has to feel alone in the dark.
+      </p>
+
+      <p class="quote">"Survive, create, reach outward, find the light, and remind others it exists."</p>
+    </div>
+
+    <nav class="links" aria-label="Social links">
+
+      <a class="link-card" href="https://beluxbeyond.substack.com" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">Substack</span>
+          <span class="link-sub">@beluxbeyond</span>
+        </span>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a class="link-card" href="https://instagram.com/beluxbeyond" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">Instagram</span>
+          <span class="link-sub">@beluxbeyond</span>
+        </span>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a class="link-card" href="https://x.com/beluxbeyond" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </span>
+        <span class="link-text">
+          <span class="link-label">X / Twitter</span>
+          <span class="link-sub">@beluxbeyond</span>
+        </span>
+        <span class="link-arrow">→</span>
+      </a>
+
+    </nav>
+
+    <footer class="footer">
+      <a href="https://byndverse.io" class="footer-brand">byndverse.io</a>
+    </footer>
+  </main>
+
+  <script src="starfield.js"></script>
+</body>
+</html>
