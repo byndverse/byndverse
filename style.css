@@ -131,10 +131,11 @@ body {
   border-radius: 50%;
   background: conic-gradient(
     from 0deg,
-    var(--accent-1),
-    var(--accent-2),
-    var(--accent-3),
-    var(--accent-1)
+    #c8853a,
+    #b47bff,
+    #3a7a4a,
+    #7ec8e3,
+    #c8853a
   );
   animation: spin 8s linear infinite;
   z-index: 0;
