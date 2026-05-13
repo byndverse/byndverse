@@ -119,24 +119,25 @@ body {
   height: 108px;
   margin-bottom: 28px;
   cursor: pointer;
-  perspective: 600px;
 }
 
 @keyframes coin-spin {
-  0%   { transform: rotateY(0deg); }
-  15%  { transform: rotateY(90deg) scaleX(0.1); }
-  30%  { transform: rotateY(180deg); }
-  45%  { transform: rotateY(270deg) scaleX(0.1); }
-  60%  { transform: rotateY(360deg); }
-  75%  { transform: rotateY(450deg) scaleX(0.1); }
-  90%  { transform: rotateY(540deg); }
-  100% { transform: rotateY(720deg); }
+  0%   { transform: perspective(500px) rotateY(0deg); }
+  15%  { transform: perspective(500px) rotateY(90deg) scaleX(0.08); }
+  30%  { transform: perspective(500px) rotateY(180deg); }
+  45%  { transform: perspective(500px) rotateY(270deg) scaleX(0.08); }
+  60%  { transform: perspective(500px) rotateY(360deg); }
+  75%  { transform: perspective(500px) rotateY(450deg) scaleX(0.08); }
+  90%  { transform: perspective(500px) rotateY(540deg); }
+  100% { transform: perspective(500px) rotateY(720deg); }
 }
 
-.logo-wrap.spinning .logo,
-.logo-wrap.spinning .logo-fallback {
+.logo-wrap.spinning {
   animation: coin-spin 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  transform-style: preserve-3d;
+}
+
+.logo-wrap.spinning::before {
+  animation-play-state: paused;
 }
 
 .logo-wrap::before {

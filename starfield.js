@@ -45,6 +45,7 @@
       logoWrap.classList.add('spinning');
       logoWrap.addEventListener('animationend', () => {
         logoWrap.classList.remove('spinning');
+        logoWrap.style.transform = '';
       }, { once: true });
     });
   }
