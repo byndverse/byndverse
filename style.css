@@ -253,7 +253,6 @@ body {
 .art-thumb {
   flex: 0 0 auto;
   width: 110px;
-  height: 110px;
   padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
@@ -261,6 +260,8 @@ body {
   background: var(--surface);
   cursor: pointer;
   scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
   transition:
     transform var(--transition),
     border-color var(--transition),
@@ -269,9 +270,24 @@ body {
 
 .art-thumb img {
   width: 100%;
-  height: 100%;
+  height: 110px;
   object-fit: cover;
   display: block;
+  flex-shrink: 0;
+}
+
+.art-title {
+  padding: 6px 8px 7px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(220, 210, 255, 0.75);
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .art-thumb:hover,
@@ -543,6 +559,9 @@ body {
 
   .art-thumb {
     width: 92px;
+  }
+
+  .art-thumb img {
     height: 92px;
   }
 
