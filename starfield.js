@@ -103,6 +103,73 @@
     animateGlow();
   }
 
+  const thumbs = Array.from(document.querySelectorAll('.art-thumb'));
+  if (thumbs.length) {
+    let current = 0;
+
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Artwork viewer');
+
+    const lbImg = document.createElement('img');
+    lbImg.className = 'lightbox-img';
+    lbImg.alt = '';
+
+    const lbClose = document.createElement('button');
+    lbClose.className = 'lightbox-close';
+    lbClose.type = 'button';
+    lbClose.setAttribute('aria-label', 'Close');
+    lbClose.textContent = '✕';
+
+    const lbPrev = document.createElement('button');
+    lbPrev.className = 'lightbox-prev';
+    lbPrev.type = 'button';
+    lbPrev.setAttribute('aria-label', 'Previous artwork');
+    lbPrev.textContent = '‹';
+
+    const lbNext = document.createElement('button');
+    lbNext.className = 'lightbox-next';
+    lbNext.type = 'button';
+    lbNext.setAttribute('aria-label', 'Next artwork');
+    lbNext.textContent = '›';
+
+    lb.append(lbImg, lbClose, lbPrev, lbNext);
+    document.body.appendChild(lb);
+
+    function show(index) {
+      current = (index + thumbs.length) % thumbs.length;
+      const sourceImg = thumbs[current].querySelector('img');
+      lbImg.src = sourceImg.src;
+      lbImg.alt = sourceImg.alt;
+      lb.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+
+    function close() {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    thumbs.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => show(i));
+    });
+
+    lbClose.addEventListener('click', close);
+    lbPrev.addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+    lbNext.addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape')     close();
+      if (e.key === 'ArrowLeft')  show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+
   const logoWrap = document.querySelector('.logo-wrap');
   if (logoWrap) {
     const COLORS = ['#b47bff', '#7ec8e3', '#ff6ecb', '#c8853a', '#ffffff'];
