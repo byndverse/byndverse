@@ -302,6 +302,7 @@ body {
   inset: 0;
   z-index: 1000;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: rgba(4, 3, 15, 0.92);
@@ -319,7 +320,7 @@ body {
 
 .lightbox-img {
   max-width: min(92vw, 1100px);
-  max-height: 82vh;
+  max-height: 72vh;
   border-radius: 14px;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.06);
   object-fit: contain;
@@ -329,6 +330,17 @@ body {
 
 .lightbox.is-open .lightbox-img {
   transform: scale(1);
+}
+
+.lightbox-title {
+  margin-top: 18px;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(220, 210, 255, 0.85);
+  text-align: center;
+  pointer-events: none;
 }
 
 .lightbox-close,

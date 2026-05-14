@@ -118,6 +118,9 @@
     lbImg.className = 'lightbox-img';
     lbImg.alt = '';
 
+    const lbTitle = document.createElement('p');
+    lbTitle.className = 'lightbox-title';
+
     const lbClose = document.createElement('button');
     lbClose.className = 'lightbox-close';
     lbClose.type = 'button';
@@ -136,7 +139,7 @@
     lbNext.setAttribute('aria-label', 'Next artwork');
     lbNext.textContent = '›';
 
-    lb.append(lbImg, lbClose, lbPrev, lbNext);
+    lb.append(lbImg, lbTitle, lbClose, lbPrev, lbNext);
     document.body.appendChild(lb);
 
     function show(index) {
@@ -144,6 +147,8 @@
       const sourceImg = thumbs[current].querySelector('img');
       lbImg.src = sourceImg.src;
       lbImg.alt = sourceImg.alt;
+      const titleEl = thumbs[current].querySelector('.art-title');
+      lbTitle.textContent = titleEl ? titleEl.textContent : '';
       lb.classList.add('is-open');
       document.body.style.overflow = 'hidden';
       lbClose.focus();
