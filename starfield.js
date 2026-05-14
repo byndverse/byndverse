@@ -39,6 +39,9 @@
   resize();
   requestAnimationFrame(draw);
 
+  const cx = window.innerWidth / 2;
+  const cy = window.innerHeight / 2;
+
   document.querySelectorAll('.link-card').forEach((card, i) => {
     card.style.animation = `fadeUp 0.6s ${0.35 + i * 0.1}s ease both`;
   });
@@ -50,8 +53,6 @@
   ];
   const orbTarget = { x: 0, y: 0 };
   const orbCurrent = { x: 0, y: 0 };
-  const cx = window.innerWidth / 2;
-  const cy = window.innerHeight / 2;
 
   function lerp(a, b, t) { return a + (b - a) * t; }
 
