@@ -1,25 +1,4 @@
 (function () {
-  // ── Base64 image fixer ──
-  // Images pushed via MCP tools are stored as base64 text files.
-  // This detects them and converts to data URIs so the browser renders them.
-  function asDataUri(src) {
-    return fetch(src)
-      .then(function(r) { return r.text(); })
-      .then(function(text) {
-        var t = text.trim();
-        return t.startsWith('/9j/') ? 'data:image/jpeg;base64,' + t : src;
-      })
-      .catch(function() { return src; });
-  }
-
-  var logoImg = document.querySelector('.logo');
-  if (logoImg) asDataUri(logoImg.src).then(function(u) { logoImg.src = u; });
-
-  document.querySelectorAll('.art-thumb img').forEach(function(img) {
-    asDataUri(img.src).then(function(u) { img.src = u; });
-  });
-
-  // ── Starfield ──
   const canvas = document.getElementById('starfield');
   const ctx = canvas.getContext('2d');
   let stars = [];
@@ -60,19 +39,17 @@
   resize();
   requestAnimationFrame(draw);
 
-  // ── Staggered load animations for link cards ──
   document.querySelectorAll('.link-card').forEach((card, i) => {
     card.style.animation = `fadeUp 0.6s ${0.35 + i * 0.1}s ease both`;
   });
 
-  // ── Parallax orbs ──
   const orbs = [
     { el: document.querySelector('.orb-1'), factorX: 0.025, factorY: 0.020 },
     { el: document.querySelector('.orb-2'), factorX: -0.018, factorY: -0.015 },
     { el: document.querySelector('.orb-3'), factorX: 0.010, factorY: 0.012 },
   ];
-  let orbTarget = { x: 0, y: 0 };
-  let orbCurrent = { x: 0, y: 0 };
+  const orbTarget = { x: 0, y: 0 };
+  const orbCurrent = { x: 0, y: 0 };
   const cx = window.innerWidth / 2;
   const cy = window.innerHeight / 2;
 
@@ -103,7 +80,6 @@
 
   animateOrbs();
 
-  // ── Cursor glow (desktop) ──
   const hasHover = window.matchMedia('(hover: hover)').matches;
   if (hasHover) {
     const glow = document.createElement('div');
@@ -127,7 +103,6 @@
     animateGlow();
   }
 
-  // ── Logo coin spin + particle burst ──
   const logoWrap = document.querySelector('.logo-wrap');
   if (logoWrap) {
     const COLORS = ['#b47bff', '#7ec8e3', '#ff6ecb', '#c8853a', '#ffffff'];
@@ -135,8 +110,8 @@
 
     function burst() {
       const rect = logoWrap.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
+      const bx = rect.left + rect.width / 2;
+      const by = rect.top + rect.height / 2;
       const count = 14;
 
       for (let i = 0; i < count; i++) {
@@ -148,7 +123,7 @@
         const p = document.createElement('span');
         p.className = 'particle';
         p.style.cssText = `
-          left:${cx}px; top:${cy}px;
+          left:${bx}px; top:${by}px;
           width:${size}px; height:${size}px;
           background:${color};
         `;
@@ -183,74 +158,6 @@
 
       burst();
       anim.onfinish = () => { isSpinning = false; };
-    });
-  }
-
-  // ── Lightbox ──
-  const lbImgs = Array.from(document.querySelectorAll('.art-thumb img'));
-  if (lbImgs.length) {
-    let lbCurrent = 0;
-
-    const lb = document.createElement('div');
-    lb.className = 'lightbox';
-    lb.setAttribute('role', 'dialog');
-    lb.setAttribute('aria-modal', 'true');
-    lb.setAttribute('aria-label', 'Artwork lightbox');
-
-    const lbImg = document.createElement('img');
-    lbImg.className = 'lightbox-img';
-
-    const lbCaption = document.createElement('p');
-    lbCaption.className = 'lightbox-caption';
-
-    const lbClose = document.createElement('button');
-    lbClose.className = 'lightbox-close';
-    lbClose.setAttribute('aria-label', 'Close');
-    lbClose.textContent = '✕';
-
-    const lbPrev = document.createElement('button');
-    lbPrev.className = 'lightbox-prev';
-    lbPrev.setAttribute('aria-label', 'Previous image');
-    lbPrev.textContent = '←';
-
-    const lbNext = document.createElement('button');
-    lbNext.className = 'lightbox-next';
-    lbNext.setAttribute('aria-label', 'Next image');
-    lbNext.textContent = '→';
-
-    lb.append(lbImg, lbCaption, lbClose, lbPrev, lbNext);
-    document.body.appendChild(lb);
-
-    function lbShow(index) {
-      lbCurrent = (index + lbImgs.length) % lbImgs.length;
-      var fullSrc = lbImgs[lbCurrent].dataset.full || lbImgs[lbCurrent].src;
-      lbImg.alt = lbImgs[lbCurrent].alt;
-      lbCaption.textContent = lbImgs[lbCurrent].alt;
-      lb.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-      lbClose.focus();
-      asDataUri(fullSrc).then(function(u) { lbImg.src = u; });
-    }
-
-    function lbCloseFn() {
-      lb.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
-
-    lbImgs.forEach((img, i) => {
-      img.parentElement.addEventListener('click', () => lbShow(i));
-    });
-
-    lbClose.addEventListener('click', lbCloseFn);
-    lbPrev.addEventListener('click', e => { e.stopPropagation(); lbShow(lbCurrent - 1); });
-    lbNext.addEventListener('click', e => { e.stopPropagation(); lbShow(lbCurrent + 1); });
-    lb.addEventListener('click', e => { if (e.target === lb) lbCloseFn(); });
-
-    document.addEventListener('keydown', e => {
-      if (!lb.classList.contains('is-open')) return;
-      if (e.key === 'Escape')     lbCloseFn();
-      if (e.key === 'ArrowLeft')  lbShow(lbCurrent - 1);
-      if (e.key === 'ArrowRight') lbShow(lbCurrent + 1);
     });
   }
 })();
