@@ -1,4 +1,24 @@
 (function () {
+  // ── Base64 image fixer ──
+  // Images pushed via MCP tools are stored as base64 text files.
+  // This detects them and converts to data URIs so the browser renders them.
+  function asDataUri(src) {
+    return fetch(src)
+      .then(function(r) { return r.text(); })
+      .then(function(text) {
+        var t = text.trim();
+        return t.startsWith('/9j/') ? 'data:image/jpeg;base64,' + t : src;
+      })
+      .catch(function() { return src; });
+  }
+
+  var logoImg = document.querySelector('.logo');
+  if (logoImg) asDataUri(logoImg.src).then(function(u) { logoImg.src = u; });
+
+  document.querySelectorAll('.art-thumb img').forEach(function(img) {
+    asDataUri(img.src).then(function(u) { img.src = u; });
+  });
+
   // ── Starfield ──
   const canvas = document.getElementById('starfield');
   const ctx = canvas.getContext('2d');
@@ -203,12 +223,13 @@
 
     function lbShow(index) {
       lbCurrent = (index + lbImgs.length) % lbImgs.length;
-      lbImg.src = lbImgs[lbCurrent].dataset.full || lbImgs[lbCurrent].src;
+      var fullSrc = lbImgs[lbCurrent].dataset.full || lbImgs[lbCurrent].src;
       lbImg.alt = lbImgs[lbCurrent].alt;
       lbCaption.textContent = lbImgs[lbCurrent].alt;
       lb.classList.add('is-open');
       document.body.style.overflow = 'hidden';
       lbClose.focus();
+      asDataUri(fullSrc).then(function(u) { lbImg.src = u; });
     }
 
     function lbCloseFn() {
