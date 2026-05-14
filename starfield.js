@@ -145,7 +145,7 @@
     function show(index) {
       current = (index + thumbs.length) % thumbs.length;
       const sourceImg = thumbs[current].querySelector('img');
-      lbImg.src = sourceImg.src;
+      lbImg.src = sourceImg.currentSrc || sourceImg.src;
       lbImg.alt = sourceImg.alt;
       const titleEl = thumbs[current].querySelector('.art-title');
       lbTitle.textContent = titleEl ? titleEl.textContent : '';
