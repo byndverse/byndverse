@@ -1,84 +1,90 @@
 (function () {
 
-  /* ── Starfield canvas ─────────────────────────────── */
-
-  const canvas = document.getElementById('starfield');
-  const ctx = canvas.getContext('2d');
-  let stars = [];
-
-  function resize() {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    canvas.width = w;
-    canvas.height = h;
-    buildStars();
-  }
-
-  function buildStars() {
-    const count = Math.floor((canvas.width * canvas.height) / 5000);
-    stars = Array.from({ length: count }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.1 + 0.2,
-      alpha: Math.random() * 0.5 + 0.1,
-      speed: Math.random() * 0.3 + 0.05,
-      phase: Math.random() * Math.PI * 2,
-    }));
-  }
-
-  function draw(t) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (const s of stars) {
-      const pulse = Math.sin(t * 0.001 * s.speed + s.phase);
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(240, 220, 180, ${s.alpha + pulse * 0.10})`;
-      ctx.fill();
-    }
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-  requestAnimationFrame(draw);
-
-  /* ── Orb parallax ─────────────────────────────────── */
-
-  const cx = window.innerWidth / 2;
-  const cy = window.innerHeight / 2;
-
-  const orbs = [
-    { el: document.querySelector('.orb-1'), factorX:  0.022, factorY:  0.018 },
-    { el: document.querySelector('.orb-2'), factorX: -0.015, factorY: -0.013 },
-    { el: document.querySelector('.orb-3'), factorX:  0.009, factorY:  0.011 },
-  ];
-  const orbTarget  = { x: 0, y: 0 };
-  const orbCurrent = { x: 0, y: 0 };
+  const isMobile = window.innerWidth <= 760;
 
   function lerp(a, b, t) { return a + (b - a) * t; }
 
-  function animateOrbs() {
-    orbCurrent.x = lerp(orbCurrent.x, orbTarget.x, 0.06);
-    orbCurrent.y = lerp(orbCurrent.y, orbTarget.y, 0.06);
-    orbs.forEach(({ el, factorX, factorY }) => {
-      if (!el) return;
-      el.style.transform = `translate(${orbCurrent.x * factorX * 100}px, ${orbCurrent.y * factorY * 100}px)`;
-    });
-    requestAnimationFrame(animateOrbs);
+  /* ── Starfield canvas ─────────────────────────────── */
+
+  if (!isMobile) {
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resize() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      canvas.width = w;
+      canvas.height = h;
+      buildStars();
+    }
+
+    function buildStars() {
+      const count = Math.floor((canvas.width * canvas.height) / 5000);
+      stars = Array.from({ length: count }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.1 + 0.2,
+        alpha: Math.random() * 0.5 + 0.1,
+        speed: Math.random() * 0.3 + 0.05,
+        phase: Math.random() * Math.PI * 2,
+      }));
+    }
+
+    function draw(t) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const s of stars) {
+        const pulse = Math.sin(t * 0.001 * s.speed + s.phase);
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(240, 220, 180, ${s.alpha + pulse * 0.10})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    requestAnimationFrame(draw);
   }
 
-  window.addEventListener('mousemove', e => {
-    orbTarget.x = (e.clientX - cx) / cx;
-    orbTarget.y = (e.clientY - cy) / cy;
-  });
+  /* ── Orb parallax ─────────────────────────────────── */
 
-  window.addEventListener('deviceorientation', e => {
-    if (e.gamma == null) return;
-    orbTarget.x = Math.max(-1, Math.min(1, e.gamma / 20));
-    orbTarget.y = Math.max(-1, Math.min(1, (e.beta - 30) / 30));
-  });
+  if (!isMobile) {
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
 
-  animateOrbs();
+    const orbs = [
+      { el: document.querySelector('.orb-1'), factorX:  0.022, factorY:  0.018 },
+      { el: document.querySelector('.orb-2'), factorX: -0.015, factorY: -0.013 },
+      { el: document.querySelector('.orb-3'), factorX:  0.009, factorY:  0.011 },
+    ];
+    const orbTarget  = { x: 0, y: 0 };
+    const orbCurrent = { x: 0, y: 0 };
+
+    function animateOrbs() {
+      orbCurrent.x = lerp(orbCurrent.x, orbTarget.x, 0.06);
+      orbCurrent.y = lerp(orbCurrent.y, orbTarget.y, 0.06);
+      orbs.forEach(({ el, factorX, factorY }) => {
+        if (!el) return;
+        el.style.transform = `translate(${orbCurrent.x * factorX * 100}px, ${orbCurrent.y * factorY * 100}px)`;
+      });
+      requestAnimationFrame(animateOrbs);
+    }
+
+    window.addEventListener('mousemove', e => {
+      orbTarget.x = (e.clientX - cx) / cx;
+      orbTarget.y = (e.clientY - cy) / cy;
+    });
+
+    window.addEventListener('deviceorientation', e => {
+      if (e.gamma == null) return;
+      orbTarget.x = Math.max(-1, Math.min(1, e.gamma / 20));
+      orbTarget.y = Math.max(-1, Math.min(1, (e.beta - 30) / 30));
+    });
+
+    animateOrbs();
+  }
 
   /* ── Cursor glow ──────────────────────────────────── */
 
@@ -156,73 +162,81 @@
 
   const artWraps = Array.from(document.querySelectorAll('.art-img-wrap'));
   if (artWraps.length) {
-    let current = 0;
+    function initLightbox() {
+      let current = 0;
 
-    const lb      = document.createElement('div');
-    const lbImg   = document.createElement('img');
-    const lbTitle = document.createElement('p');
-    const lbClose = document.createElement('button');
-    const lbPrev  = document.createElement('button');
-    const lbNext  = document.createElement('button');
+      const lb      = document.createElement('div');
+      const lbImg   = document.createElement('img');
+      const lbTitle = document.createElement('p');
+      const lbClose = document.createElement('button');
+      const lbPrev  = document.createElement('button');
+      const lbNext  = document.createElement('button');
 
-    lb.className      = 'lightbox';
-    lb.setAttribute('role', 'dialog');
-    lb.setAttribute('aria-modal', 'true');
-    lb.setAttribute('aria-label', 'Artwork viewer');
+      lb.className      = 'lightbox';
+      lb.setAttribute('role', 'dialog');
+      lb.setAttribute('aria-modal', 'true');
+      lb.setAttribute('aria-label', 'Artwork viewer');
 
-    lbImg.className   = 'lightbox-img';
-    lbImg.alt         = '';
+      lbImg.className   = 'lightbox-img';
+      lbImg.alt         = '';
 
-    lbTitle.className = 'lightbox-title';
+      lbTitle.className = 'lightbox-title';
 
-    lbClose.className = 'lightbox-close';
-    lbClose.type      = 'button';
-    lbClose.setAttribute('aria-label', 'Close');
-    lbClose.textContent = '✕';
+      lbClose.className = 'lightbox-close';
+      lbClose.type      = 'button';
+      lbClose.setAttribute('aria-label', 'Close');
+      lbClose.textContent = '✕';
 
-    lbPrev.className  = 'lightbox-prev';
-    lbPrev.type       = 'button';
-    lbPrev.setAttribute('aria-label', 'Previous artwork');
-    lbPrev.textContent = '‹';
+      lbPrev.className  = 'lightbox-prev';
+      lbPrev.type       = 'button';
+      lbPrev.setAttribute('aria-label', 'Previous artwork');
+      lbPrev.textContent = '‹';
 
-    lbNext.className  = 'lightbox-next';
-    lbNext.type       = 'button';
-    lbNext.setAttribute('aria-label', 'Next artwork');
-    lbNext.textContent = '›';
+      lbNext.className  = 'lightbox-next';
+      lbNext.type       = 'button';
+      lbNext.setAttribute('aria-label', 'Next artwork');
+      lbNext.textContent = '›';
 
-    lb.append(lbImg, lbTitle, lbClose, lbPrev, lbNext);
-    document.body.appendChild(lb);
+      lb.append(lbImg, lbTitle, lbClose, lbPrev, lbNext);
+      document.body.appendChild(lb);
 
-    function show(index) {
-      current = (index + artWraps.length) % artWraps.length;
-      const sourceImg = artWraps[current].querySelector('img');
-      lbImg.src = sourceImg.currentSrc || sourceImg.src;
-      lbImg.alt = sourceImg.alt;
-      const piece   = artWraps[current].closest('.art-piece');
-      const nameEl  = piece ? piece.querySelector('.art-name') : null;
-      lbTitle.textContent = nameEl ? nameEl.textContent : '';
-      lb.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-      lbClose.focus();
+      function show(index) {
+        current = (index + artWraps.length) % artWraps.length;
+        const sourceImg = artWraps[current].querySelector('img');
+        lbImg.src = sourceImg.currentSrc || sourceImg.src;
+        lbImg.alt = sourceImg.alt;
+        const piece   = artWraps[current].closest('.art-piece');
+        const nameEl  = piece ? piece.querySelector('.art-name') : null;
+        lbTitle.textContent = nameEl ? nameEl.textContent : '';
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      }
+
+      function close() {
+        lb.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      artWraps.forEach((wrap, i) => wrap.addEventListener('click', () => show(i)));
+      lbClose.addEventListener('click', close);
+      lbPrev.addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+      lbNext.addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
+      lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+      document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('is-open')) return;
+        if (e.key === 'Escape')     close();
+        if (e.key === 'ArrowLeft')  show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
     }
 
-    function close() {
-      lb.classList.remove('is-open');
-      document.body.style.overflow = '';
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(initLightbox);
+    } else {
+      setTimeout(initLightbox, 200);
     }
-
-    artWraps.forEach((wrap, i) => wrap.addEventListener('click', () => show(i)));
-    lbClose.addEventListener('click', close);
-    lbPrev.addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
-    lbNext.addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
-    lb.addEventListener('click', e => { if (e.target === lb) close(); });
-
-    document.addEventListener('keydown', e => {
-      if (!lb.classList.contains('is-open')) return;
-      if (e.key === 'Escape')     close();
-      if (e.key === 'ArrowLeft')  show(current - 1);
-      if (e.key === 'ArrowRight') show(current + 1);
-    });
   }
 
   /* ── Scroll reveal ────────────────────────────────── */
