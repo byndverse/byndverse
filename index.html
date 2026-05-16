@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="canonical" href="https://byndverse.io" />
   <title>BeLux Beyond — The Beyondverse</title>
   <meta name="description" content="The Beyondverse — a named universe built from the dark, lit from within. Visionary art by BeLux Beyond." />
 
@@ -26,7 +28,44 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" /></noscript>
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0a0f;--bg-2:#0d0d1a;--text:#f0ece0;--text-muted:rgba(240,236,224,0.52);--accent:#c8953a;--accent-dim:rgba(200,149,58,0.13);--border:rgba(240,236,224,0.07);--border-acc:rgba(200,149,58,0.20);--transition:0.4s cubic-bezier(0.4,0,0.2,1);--transition-slow:0.7s cubic-bezier(0.4,0,0.2,1)}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-weight:400;overflow-x:hidden}
+    #starfield{position:fixed;inset:0;z-index:0;pointer-events:none}
+    .orb{position:fixed;border-radius:50%;filter:blur(110px);pointer-events:none;z-index:0;will-change:transform}
+    .orb-1{width:700px;height:700px;background:rgba(200,149,58,0.09);top:-200px;left:-150px;animation:drift1 20s ease-in-out infinite alternate}
+    .orb-2{width:550px;height:550px;background:rgba(60,40,120,0.14);bottom:-120px;right:-100px;animation:drift2 25s ease-in-out infinite alternate}
+    .orb-3{width:400px;height:400px;background:rgba(90,30,10,0.10);top:45%;left:55%;transform:translateX(-50%);animation:drift3 16s ease-in-out infinite alternate}
+    @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(100px,70px)}}
+    @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-70px,-90px)}}
+    @keyframes drift3{from{transform:translateX(-50%) scale(1)}to{transform:translateX(-50%) scale(1.35)}}
+    .particle{position:fixed;border-radius:50%;pointer-events:none;z-index:999}
+    .cursor-glow{position:fixed;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(200,149,58,0.07) 0%,transparent 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:0}
+    .will-reveal{opacity:0;transform:translateY(30px);transition:opacity var(--transition-slow),transform var(--transition-slow)}
+    .will-reveal.is-revealed{opacity:1;transform:translateY(0)}
+    .hero{position:relative;height:100svh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    @supports not (height:100svh){.hero{height:100vh}}
+    .hero-bg{position:absolute;inset:0;z-index:1;display:block}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    .hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(0,0,0,0.48) 0%,rgba(10,8,20,0.60) 55%,rgba(10,10,15,0.84) 100%)}
+    .hero-identity{position:absolute;top:0;left:0;z-index:4;padding:1.75rem 2rem;display:flex;align-items:center;gap:0.875rem}
+    .hero-logo-wrap{position:relative;width:42px;height:42px;border-radius:50%;overflow:hidden;cursor:pointer;flex-shrink:0;border:1px solid rgba(200,149,58,0.32);transition:border-color var(--transition)}
+    .hero-logo-wrap:hover{border-color:rgba(200,149,58,0.70)}
+    .hero-logo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-identity-name{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-weight:500;letter-spacing:0.10em;color:rgba(240,236,224,0.60)}
+    .hero-content{position:relative;z-index:3;text-align:center;padding:0 1.5rem;max-width:840px;display:flex;flex-direction:column;align-items:center}
+    .hero-eyebrow{font-family:'Cormorant Garamond',serif;font-size:0.72rem;font-weight:500;letter-spacing:0.34em;color:var(--accent);text-transform:uppercase;margin-bottom:1.75rem;opacity:0;animation:heroFade 1.1s 0.2s ease forwards}
+    .hero-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8.5vw,6.5rem);font-weight:500;line-height:1.06;color:var(--text);margin-bottom:1.75rem;opacity:0;animation:heroFade 1.1s 0.45s ease forwards}
+    .hero-sub{font-family:'Inter',sans-serif;font-size:clamp(0.93rem,2vw,1.08rem);font-weight:300;color:rgba(240,236,224,0.60);letter-spacing:0.02em;line-height:1.72;max-width:460px;opacity:0;animation:heroFade 1.1s 0.70s ease forwards}
+    @keyframes heroFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    .scroll-cue{position:absolute;bottom:2.25rem;left:50%;transform:translateX(-50%);z-index:4;color:rgba(240,236,224,0.28);font-size:1.6rem;line-height:1;user-select:none;pointer-events:none;animation:scrollBounce 2.4s ease-in-out infinite}
+    @keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0);opacity:0.28}50%{transform:translateX(-50%) translateY(9px);opacity:0.62}}
+    @media(max-width:760px){.hero-identity{padding:1.25rem 1.25rem}.hero-identity-name{display:none}}
+  </style>
+  <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="style.css" /></noscript>
 </head>
 <body>
 
@@ -40,7 +79,7 @@
 
     <picture class="hero-bg" aria-hidden="true">
       <source srcset="assets/art/art-1.webp" type="image/webp" />
-      <img src="assets/art/art-1.jpg" alt="" fetchpriority="high" />
+      <img src="assets/art/art-1.jpg" alt="" fetchpriority="high" width="560" height="1000" />
     </picture>
     <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -48,7 +87,7 @@
       <div class="hero-logo-wrap" role="button" tabindex="0" aria-label="BeLux Beyond">
         <picture>
           <source srcset="assets/logo.webp" type="image/webp" />
-          <img src="assets/logo.jpg" alt="BeLux Beyond" />
+          <img src="assets/logo.jpg" alt="BeLux Beyond" width="800" height="800" />
         </picture>
       </div>
       <span class="hero-identity-name">BeLux Beyond</span>
@@ -84,7 +123,7 @@
         <button class="art-img-wrap" type="button" aria-label="View Where the Light Remembers in full screen">
           <picture>
             <source srcset="assets/art/art-1.webp" type="image/webp" />
-            <img src="assets/art/art-1.jpg" alt="Where the Light Remembers — a lone figure stands before a colossal glowing tree, its bark alive with veins of cyan light, purple luminescence flooding the forest around it" loading="lazy" />
+            <img src="assets/art/art-1.jpg" alt="Where the Light Remembers — a lone figure stands before a colossal glowing tree, its bark alive with veins of cyan light, purple luminescence flooding the forest around it" loading="lazy" decoding="async" width="560" height="1000" />
           </picture>
         </button>
         <div class="art-meta">
@@ -98,7 +137,7 @@
         <button class="art-img-wrap" type="button" aria-label="View Dissolution in full screen">
           <picture>
             <source srcset="assets/art/art-4.webp" type="image/webp" />
-            <img src="assets/art/art-4.jpg" alt="Dissolution — a serene human face melts into swirling waves of teal, crimson, and gold, as if the self is dissolving into the fabric of the cosmos" loading="lazy" />
+            <img src="assets/art/art-4.jpg" alt="Dissolution — a serene human face melts into swirling waves of teal, crimson, and gold, as if the self is dissolving into the fabric of the cosmos" loading="lazy" decoding="async" width="512" height="512" />
           </picture>
         </button>
         <div class="art-meta">
@@ -112,7 +151,7 @@
         <button class="art-img-wrap" type="button" aria-label="View Dream Door in full screen">
           <picture>
             <source srcset="assets/art/art-3.webp" type="image/webp" />
-            <img src="assets/art/art-3.jpg" alt="Dream Door — a lone figure walks toward a towering stone archway ablaze with amber light, purple wildflowers lining the path beneath a twilight sky" loading="lazy" />
+            <img src="assets/art/art-3.jpg" alt="Dream Door — a lone figure walks toward a towering stone archway ablaze with amber light, purple wildflowers lining the path beneath a twilight sky" loading="lazy" decoding="async" width="800" height="1427" />
           </picture>
         </button>
         <div class="art-meta">
@@ -126,7 +165,7 @@
         <button class="art-img-wrap" type="button" aria-label="View Adrift in full screen">
           <picture>
             <source srcset="assets/art/art-2.webp" type="image/webp" />
-            <img src="assets/art/art-2.jpg" alt="The Last Island — a lone wooden boat rests on mirror-still water, mist-shrouded rock formations rising in the distance beneath a soft pink and teal dawn sky" loading="lazy" />
+            <img src="assets/art/art-2.jpg" alt="Adrift — a lone wooden boat rests on mirror-still water, mist-shrouded rock formations rising in the distance beneath a soft pink and teal dawn sky" loading="lazy" decoding="async" width="800" height="1427" />
           </picture>
         </button>
         <div class="art-meta">
