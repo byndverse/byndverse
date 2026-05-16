@@ -4,29 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0f" />
-  <link rel="canonical" href="https://byndverse.io" />
-  <title>BeLux Beyond — Visionary Art | The Beyondverse</title>
-  <meta name="description" content="Enter the Beyondverse — a world of visionary digital art by BeLux Beyond. Luminous landscapes, ethereal worlds, and art built from the dark, lit from within." />
+  <link rel="canonical" href="https://byndverse.io/about.html" />
+  <title>About — Jay Salton | BeLux Beyond</title>
+  <meta name="description" content="Jay Salton is BeLux Beyond — Australian new media artist, world-builder, and creator of the Beyondverse. Bio and artist statement." />
 
-  <meta property="og:title" content="BeLux Beyond — The Beyondverse" />
-  <meta property="og:description" content="A named universe with real geography. The Luminous Wilds. The Drift. The Threshold. Visionary art by BeLux Beyond." />
+  <meta property="og:title" content="About Jay Salton — BeLux Beyond" />
+  <meta property="og:description" content="Australian new media artist working at the intersection of 3D world-building, surrealism, and digital mindfulness. Creator of the Beyondverse." />
   <meta property="og:image" content="https://byndverse.io/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="A luminous river at dusk, surrounded by glowing wildflowers — visionary art from the Beyondverse by BeLux Beyond" />
-  <meta property="og:url" content="https://byndverse.io" />
+  <meta property="og:image:alt" content="Visionary art from the Beyondverse by BeLux Beyond" />
+  <meta property="og:url" content="https://byndverse.io/about.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Beyondverse" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@beluxbeyond" />
-  <meta name="twitter:title" content="BeLux Beyond — The Beyondverse" />
-  <meta name="twitter:description" content="A named universe with real geography. The Luminous Wilds. The Drift. The Threshold. Visionary art by BeLux Beyond." />
+  <meta name="twitter:title" content="About Jay Salton — BeLux Beyond" />
+  <meta name="twitter:description" content="Australian new media artist working at the intersection of 3D world-building, surrealism, and digital mindfulness." />
   <meta name="twitter:image" content="https://byndverse.io/assets/og-image.jpg" />
-  <meta name="twitter:image:alt" content="A luminous river at dusk, surrounded by glowing wildflowers — visionary art from the Beyondverse by BeLux Beyond" />
 
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
 
-  <link rel="preload" as="image" href="assets/art/art-1.webp" fetchpriority="high" type="image/webp" />
   <link rel="preload" as="image" href="assets/logo-sm.webp" fetchpriority="high" type="image/webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width:761px)" />
@@ -51,11 +49,6 @@
     .cursor-glow{position:fixed;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(200,149,58,0.07) 0%,transparent 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:0}
     .will-reveal{opacity:0;transform:translateY(30px);transition:opacity var(--transition-slow),transform var(--transition-slow)}
     .will-reveal.is-revealed{opacity:1;transform:translateY(0)}
-    .hero{position:relative;height:100svh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-    @supports not (height:100svh){.hero{height:100vh}}
-    .hero-bg{position:absolute;inset:0;z-index:1;display:block}
-    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-    .hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(0,0,0,0.48) 0%,rgba(10,8,20,0.60) 55%,rgba(10,10,15,0.84) 100%)}
     .site-nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;transition:background var(--transition),border-color var(--transition);border-bottom:1px solid transparent}
     .site-nav.is-scrolled{background:rgba(10,10,15,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--border)}
     .nav-logo{display:flex;align-items:center;gap:0.875rem}
@@ -66,14 +59,11 @@
     .nav-links{display:flex;gap:2.5rem;list-style:none}
     .nav-link{font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,236,224,0.55);text-decoration:none;transition:color var(--transition)}
     .nav-link:hover,.nav-link.is-active{color:var(--accent)}
-    .hero-content{position:relative;z-index:3;text-align:center;padding:0 1.5rem;max-width:840px;display:flex;flex-direction:column;align-items:center}
-    .hero-eyebrow{font-family:'Cormorant Garamond',serif;font-size:0.72rem;font-weight:500;letter-spacing:0.34em;color:var(--accent);text-transform:uppercase;margin-bottom:1.75rem;opacity:0;animation:heroFade 1.1s 0.2s ease forwards}
-    .hero-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8.5vw,6.5rem);font-weight:500;line-height:1.06;color:var(--text);margin-bottom:1.75rem;opacity:0;animation:heroFade 1.1s 0.45s ease forwards}
-    .hero-sub{font-family:'Inter',sans-serif;font-size:clamp(0.93rem,2vw,1.08rem);font-weight:300;color:rgba(240,236,224,0.60);letter-spacing:0.02em;line-height:1.72;max-width:460px;opacity:0;animation:heroFade 1.1s 0.70s ease forwards}
-    @keyframes heroFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    .scroll-cue{position:absolute;bottom:2.25rem;left:50%;transform:translateX(-50%);z-index:4;color:rgba(240,236,224,0.28);font-size:1.6rem;line-height:1;user-select:none;pointer-events:none;animation:scrollBounce 2.4s ease-in-out infinite}
-    @keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0);opacity:0.28}50%{transform:translateX(-50%) translateY(9px);opacity:0.62}}
-    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.orb,#starfield{display:none}}
+    .about-header{position:relative;z-index:1;padding:14rem 2rem 8rem;text-align:center}
+    .about-eyebrow{font-family:'Cormorant Garamond',serif;font-size:0.72rem;font-weight:500;letter-spacing:0.34em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5rem}
+    .about-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:500;line-height:1.06;color:var(--text);margin-bottom:1rem}
+    .about-subtitle{font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:300;color:var(--text-muted);letter-spacing:0.08em}
+    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.orb,#starfield{display:none}.about-header{padding:9rem 1.5rem 5rem}}
   </style>
   <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="style.css" /></noscript>
@@ -96,119 +86,47 @@
       <a class="nav-logo-name" href="index.html">BeLux Beyond</a>
     </div>
     <ul class="nav-links">
-      <li><a class="nav-link is-active" href="index.html">Home</a></li>
-      <li><a class="nav-link" href="about.html">About</a></li>
+      <li><a class="nav-link" href="index.html">Home</a></li>
+      <li><a class="nav-link is-active" href="about.html">About</a></li>
     </ul>
   </nav>
 
-  <!-- ── 1. Hero ────────────────────────────────────── -->
-  <section class="hero">
+  <!-- Page header -->
+  <header class="about-header">
+    <p class="about-eyebrow">The Artist</p>
+    <h1 class="about-heading">Jay Salton</h1>
+    <p class="about-subtitle">BeLux Beyond</p>
+  </header>
 
-    <picture class="hero-bg" aria-hidden="true">
-      <source srcset="assets/art/art-1.webp" type="image/webp" />
-      <img src="assets/art/art-1.jpg" alt="" fetchpriority="high" width="560" height="1000" />
-    </picture>
-    <div class="hero-overlay" aria-hidden="true"></div>
-
-    <div class="hero-content">
-      <p class="hero-eyebrow">The Beyondverse</p>
-      <h1 class="hero-heading">Built from the dark,<br>lit from within.</h1>
-      <p class="hero-sub">I make art so no one has to feel alone in the dark.</p>
-    </div>
-
-    <div class="scroll-cue" aria-hidden="true">&#8964;</div>
-
-  </section>
-
-  <!-- ── 2. Statement ──────────────────────────────── -->
-  <section class="statement" aria-label="World statement">
-    <div class="statement-inner">
-      <blockquote class="statement-quote">
-        &ldquo;The Beyondverse is not a style. It&rsquo;s a named universe — a real place with real geography.
-        The Luminous Wilds. The Drift. The Threshold. The Outer Gardens.
-        You don&rsquo;t view it. You enter it.&rdquo;
-      </blockquote>
-      <p class="statement-attr">— BeLux Beyond, Visionary Artist</p>
+  <!-- Bio -->
+  <section class="bio-section" aria-label="Biography">
+    <div class="bio-inner">
+      <p class="section-label">Bio</p>
+      <div class="bio-body">
+        <p>BeLux Beyond is the visionary art identity of Australian new media artist Jay Salton, based on the Sunshine Coast, Queensland. Working at the intersection of 3D world-building, surrealism, and digital mindfulness, he creates immersive landscape environments that exist somewhere between dream, nature, and cosmic possibility. His primary tools are E-on Software Vue, used to sculpt and render his 3D worlds, and Photoshop, where those worlds are refined, layered, and brought to their final luminous state.</p>
+        <p>His creative path began in childhood and was forged through adversity. A diagnosis of schizophrenia at eighteen, followed by years of depression and recovery, led him to art as both a survival mechanism and a form of resistance. He studied Interactive Digital Media at Qantm College / SAE Institute in Brisbane and taught himself the tools to build entire worlds from imagination. The Beyondverse, his flagship body of work, was formally established in 2022 and has since grown into an internationally recognised creative universe spanning surreal nature landscapes, portal imagery, and luminous cosmic environments.</p>
+        <p>His work has appeared in solo exhibitions at The Artists Hub Gold Coast and The Old Ambulance Station, Nambour. He is an award-winning filmmaker, winning the Micah Prize at the Out From The Mist competition in 2020 for his short film <em>Journey From The Shadows</em>, a personal account of psychosis and recovery. His art has been featured in Fine Art and You, Digital Journal, and reviewed by virtual world critic Inara Pey. He is also a musician, with ambient electronic releases available across major streaming platforms.</p>
+        <p>Salton&rsquo;s practice is rooted in the belief that colour and light are a form of defiance, and that beauty built from darkness is the most honest kind there is.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ── 3. Artworld ─────────────────────────────────── -->
-  <section class="artworld" aria-label="Artwork">
-    <div class="artworld-grid">
-
-      <article class="art-piece">
-        <button class="art-img-wrap" type="button" aria-label="View Where the Light Remembers in full screen">
-          <picture>
-            <source srcset="assets/art/art-1.webp" type="image/webp" />
-            <img src="assets/art/art-1.jpg" alt="Where the Light Remembers — a lone figure stands before a colossal glowing tree, its bark alive with veins of cyan light, purple luminescence flooding the forest around it" loading="lazy" decoding="async" width="560" height="1000" />
-          </picture>
-        </button>
-        <div class="art-meta">
-          <p class="art-biome">The Luminous Wilds</p>
-          <h2 class="art-name">Where the Light Remembers</h2>
-          <p class="art-desc">The light was always there. You just had to wander far enough to find it.</p>
-        </div>
-      </article>
-
-      <article class="art-piece">
-        <button class="art-img-wrap" type="button" aria-label="View Dissolution in full screen">
-          <picture>
-            <source srcset="assets/art/art-4.webp" type="image/webp" />
-            <img src="assets/art/art-4.jpg" alt="Dissolution — a serene human face melts into swirling waves of teal, crimson, and gold, as if the self is dissolving into the fabric of the cosmos" loading="lazy" decoding="async" width="512" height="512" />
-          </picture>
-        </button>
-        <div class="art-meta">
-          <p class="art-biome">The Outer Gardens</p>
-          <h2 class="art-name">Dissolution</h2>
-          <p class="art-desc">Where the self becomes the sea. You don&rsquo;t dissolve here. You expand.</p>
-        </div>
-      </article>
-
-      <article class="art-piece">
-        <button class="art-img-wrap" type="button" aria-label="View Dream Door in full screen">
-          <picture>
-            <source srcset="assets/art/art-3.webp" type="image/webp" />
-            <img src="assets/art/art-3.jpg" alt="Dream Door — a lone figure walks toward a towering stone archway ablaze with amber light, purple wildflowers lining the path beneath a twilight sky" loading="lazy" decoding="async" width="800" height="1427" />
-          </picture>
-        </button>
-        <div class="art-meta">
-          <p class="art-biome">The Threshold</p>
-          <h2 class="art-name">Dream Door</h2>
-          <p class="art-desc">You've been standing at this door your whole life. You already know what's on the other side. Enter the Beyondverse 🔥</p>
-        </div>
-      </article>
-
-      <article class="art-piece">
-        <button class="art-img-wrap" type="button" aria-label="View Adrift in full screen">
-          <picture>
-            <source srcset="assets/art/art-2.webp" type="image/webp" />
-            <img src="assets/art/art-2.jpg" alt="Adrift — a lone wooden boat rests on mirror-still water, mist-shrouded rock formations rising in the distance beneath a soft pink and teal dawn sky" loading="lazy" decoding="async" width="800" height="1427" />
-          </picture>
-        </button>
-        <div class="art-meta">
-          <p class="art-biome">The Drift</p>
-          <h2 class="art-name">Adrift</h2>
-          <p class="art-desc">Between sleeping and waking. Between here and somewhere else. Welcome back to the Beyondverse.</p>
-        </div>
-      </article>
-
+  <!-- Artist Statement -->
+  <section class="artist-statement" aria-label="Artist Statement">
+    <div class="bio-inner">
+      <p class="section-label">Artist Statement</p>
+      <div class="statement-body">
+        <p>Colour, for me, isn&rsquo;t decorative. It&rsquo;s structural. It&rsquo;s the first language I reached for when words stopped working.</p>
+        <p>The Beyondverse is a named universe, not a portfolio. It has its own geography: bioluminescent forests, floating drift landscapes, cosmic garden edges, threshold moments caught just before crossing over. Every work is a window into a place that already exists, somewhere between nature and the impossible.</p>
+        <p>I came to this work through darkness. A period of psychosis, depression, and recovery that stripped everything back and left me with one question: what do you build when you have nothing left? Colour was the answer. Not pretty colour, not safe colour, but the kind that feels like it&rsquo;s lit from inside. Neon against shadow. Rainbow against void. The kind of colour that insists on being seen.</p>
+        <p>In this body of work, colour operates as memory, as frequency, as emotional architecture. A landscape can hold grief and wonder at the same time, and the colour is what makes that legible. The surreal nature of my environments isn&rsquo;t escape from reality. It&rsquo;s a deeper reading of it. Nature already does the impossible. I&rsquo;m just letting it.</p>
+        <p>The figure in my work, when one appears, is always witnessing. Not explaining. That&rsquo;s the invitation I&rsquo;m extending to the viewer too. Come in. Look. Feel whatever this stirs. You don&rsquo;t need to name it.</p>
+        <p>The Beyondverse was built from the dark, lit from within. That&rsquo;s not a tagline. That&rsquo;s the literal truth of how it came to exist. Colour was always the way through, and it still is.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ── 4. About ────────────────────────────────────── -->
-  <section class="about" aria-label="About BeLux Beyond">
-    <div class="about-inner">
-      <p class="about-text">
-        There was a time art was the only light. Not metaphorically — literally, practically.
-        I learned to build worlds so I had somewhere real to go when this one got too dark.
-        The Beyondverse started as that place. It became a home for everyone who needed the same thing.
-        You can live there too.
-      </p>
-      <p class="about-signoff">Welcome back to the Beyondverse.</p>
-    </div>
-  </section>
-
-  <!-- ── 5. Drifters ──────────────────────────────── -->
+  <!-- Drifters CTA -->
   <section class="drifters" aria-label="Join the Drifters">
     <div class="drifters-inner">
       <h2 class="drifters-heading">Become a Drifter</h2>
@@ -222,7 +140,7 @@
     </div>
   </section>
 
-  <!-- ── 6. Footer ────────────────────────────────────── -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
       <ul class="footer-links">

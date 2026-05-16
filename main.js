@@ -4,6 +4,15 @@
 
   function lerp(a, b, t) { return a + (b - a) * t; }
 
+  /* ── Nav scroll state ────────────────────────────── */
+
+  const nav = document.getElementById('site-nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('is-scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+
   /* ── Starfield canvas ─────────────────────────────── */
 
   if (!isMobile) {
@@ -241,7 +250,7 @@
 
   /* ── Scroll reveal ────────────────────────────────── */
 
-  const revealEls = document.querySelectorAll('.statement, .art-piece, .about, .drifters, .site-footer');
+  const revealEls = document.querySelectorAll('.statement, .art-piece, .about, .drifters, .site-footer, .bio-section, .artist-statement');
   revealEls.forEach(el => el.classList.add('will-reveal'));
 
   const observer = new IntersectionObserver((entries) => {

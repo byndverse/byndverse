@@ -169,12 +169,30 @@ body {
   );
 }
 
-.hero-identity {
-  position: absolute;
+/* ── Site nav ─────────────────────────────────────────── */
+
+.site-nav {
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 4;
-  padding: 1.75rem 2rem;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  transition: background var(--transition), border-color var(--transition);
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav.is-scrolled {
+  background: rgba(10, 10, 15, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--border);
+}
+
+.nav-logo {
   display: flex;
   align-items: center;
   gap: 0.875rem;
@@ -203,12 +221,42 @@ body {
   display: block;
 }
 
-.hero-identity-name {
+.nav-logo-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.10em;
   color: rgba(240, 236, 224, 0.60);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.nav-logo-name:hover {
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(240, 236, 224, 0.55);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link.is-active {
+  color: var(--accent);
+  outline: none;
 }
 
 .hero-content {
@@ -632,6 +680,102 @@ body {
   letter-spacing: 0.04em;
 }
 
+/* ── About page ───────────────────────────────────────── */
+
+.about-header {
+  position: relative;
+  z-index: 1;
+  padding: 14rem 2rem 8rem;
+  text-align: center;
+}
+
+.about-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.about-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.06;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.about-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.bio-section {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-2);
+  padding: 8rem 2rem;
+}
+
+.bio-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.bio-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.95;
+}
+
+.bio-body p + p {
+  margin-top: 1.75rem;
+}
+
+.bio-body em {
+  font-style: italic;
+  color: var(--text);
+}
+
+.artist-statement {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  padding: 9rem 2rem;
+  border-top: 1px solid var(--border-acc);
+}
+
+.statement-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.85;
+}
+
+.statement-body p + p {
+  margin-top: 2rem;
+}
+
 /* ── Responsive ───────────────────────────────────────── */
 
 @media (max-width: 760px) {
@@ -646,8 +790,10 @@ body {
   .about,
   .drifters { padding: 6rem 1.5rem; }
 
-  .hero-identity { padding: 1.25rem 1.25rem; }
-  .hero-identity-name { display: none; }
+  .site-nav { padding: 1.25rem 1.25rem; }
+  .nav-logo-name { display: none; }
+  .about-header { padding: 9rem 1.5rem 5rem; }
+  .bio-section, .artist-statement { padding: 6rem 1.5rem; }
 
   .site-footer { padding: 4rem 1.5rem 2.5rem; }
   .footer-links { gap: 0.75rem 1.5rem; }
