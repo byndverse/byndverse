@@ -4,27 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0f" />
-  <link rel="canonical" href="https://byndverse.io/blog.html" />
-  <title>News From The Studio — BeLux Beyond</title>
-  <meta name="description" content="Updates, world lore, and behind-the-scenes from the studio of BeLux Beyond — creator of the Beyondverse." />
+  <link rel="canonical" href="https://byndverse.io/blog/the-new-site.html" />
+  <title>The New Site — BeLux Beyond</title>
+  <meta name="description" content="The Beyondverse has a proper home now. Here's what's in it — and what's coming next." />
 
-  <meta property="og:title" content="News From The Studio — BeLux Beyond" />
-  <meta property="og:description" content="Updates, world lore, and behind-the-scenes from the studio of BeLux Beyond — creator of the Beyondverse." />
+  <meta property="og:title" content="The New Site — BeLux Beyond" />
+  <meta property="og:description" content="The Beyondverse has a proper home now. Here's what's in it — and what's coming next." />
   <meta property="og:image" content="https://byndverse.io/assets/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Visionary art from the Beyondverse by BeLux Beyond" />
-  <meta property="og:url" content="https://byndverse.io/blog.html" />
-  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://byndverse.io/blog/the-new-site.html" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="The Beyondverse" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@beluxbeyond" />
-  <meta name="twitter:title" content="News From The Studio — BeLux Beyond" />
-  <meta name="twitter:description" content="Updates, world lore, and behind-the-scenes from the studio of BeLux Beyond." />
+  <meta name="twitter:title" content="The New Site — BeLux Beyond" />
   <meta name="twitter:image" content="https://byndverse.io/assets/og-image.jpg" />
 
-  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
-  <link rel="preload" as="image" href="assets/logo-sm.webp" fetchpriority="high" type="image/webp" />
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpg" />
+  <link rel="preload" as="image" href="../assets/logo-sm.webp" fetchpriority="high" type="image/webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width:761px)" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin media="(min-width:761px)" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" media="(min-width:761px)" onload="this.onload=null;this.rel='stylesheet'" />
@@ -57,30 +53,29 @@
     .nav-links{display:flex;gap:2.5rem;list-style:none}
     .nav-link{font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,236,224,0.55);text-decoration:none;transition:color var(--transition)}
     .nav-link:hover,.nav-link.is-active{color:var(--accent)}
-    .about-header{position:relative;z-index:1;padding:8rem 2rem 2rem;text-align:center}
-    .about-eyebrow{font-family:'Cormorant Garamond',serif;font-size:0.72rem;font-weight:500;letter-spacing:0.34em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5rem}
-    .about-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,5rem);font-weight:500;line-height:1.06;color:var(--text);margin-bottom:1rem}
-    .about-subtitle{font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:300;color:var(--text-muted);letter-spacing:0.08em}
     .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:25}
     .nav-toggle span{display:block;width:22px;height:2px;background:rgba(240,236,224,0.80);border-radius:2px;transition:transform var(--transition),opacity var(--transition)}
     .nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-toggle.is-open span:nth-child(2){opacity:0;width:0}
     .nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    .blog-section{position:relative;z-index:1;padding:2rem 2rem 9rem}
-    .blog-inner{max-width:760px;margin:0 auto}
-    .blog-post-card{display:block;border-top:1px solid var(--border);padding:2.75rem 0;text-decoration:none;color:inherit;transition:opacity var(--transition)}
-    .blog-post-card:last-child{border-bottom:1px solid var(--border)}
-    .blog-post-card:hover .blog-post-title{color:var(--accent)}
-    .blog-post-meta{display:flex;align-items:center;gap:1rem;margin-bottom:0.9rem}
-    .blog-post-date{font-size:0.72rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted)}
-    .blog-post-tag{font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border-acc);border-radius:2rem;padding:0.2rem 0.7rem}
-    .blog-post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:500;line-height:1.15;color:var(--text);margin-bottom:0.85rem;transition:color var(--transition)}
-    .blog-post-excerpt{font-size:0.92rem;font-weight:300;line-height:1.8;color:var(--text-muted)}
-    .blog-read-more{display:inline-block;margin-top:1.25rem;font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent)}
-    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:19}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}.about-header{padding:6rem 1.5rem 2rem}.blog-section{padding:1rem 1.25rem 7rem}}
+    .post-section{position:relative;z-index:1;padding:8rem 2rem 9rem}
+    .post-inner{max-width:680px;margin:0 auto}
+    .post-back{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;margin-bottom:3rem;transition:color var(--transition)}
+    .post-back:hover{color:var(--accent)}
+    .post-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+    .post-date{font-size:0.72rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted)}
+    .post-tag{font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border-acc);border-radius:2rem;padding:0.2rem 0.7rem}
+    .post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:500;line-height:1.1;color:var(--text);margin-bottom:3rem}
+    .post-body{font-size:1rem;font-weight:300;line-height:1.85;color:rgba(240,236,224,0.75)}
+    .post-body p{margin-bottom:1.6rem}
+    .post-body p:last-child{margin-bottom:0}
+    .post-body h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:500;color:var(--text);margin:2.5rem 0 1rem}
+    .post-body blockquote{border-left:2px solid var(--accent);padding-left:1.5rem;margin:2rem 0;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:rgba(240,236,224,0.65)}
+    .post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(200,149,58,0.4)}
+    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:19}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}.post-section{padding:6rem 1.25rem 7rem}}
   </style>
-  <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css" /></noscript>
+  <link rel="preload" as="style" href="../style.css" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="../style.css" /></noscript>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SYJR0XC7Q"></script>
   <script>
@@ -101,11 +96,11 @@
     <div class="nav-logo">
       <div class="hero-logo-wrap" role="button" tabindex="0" aria-label="BeLux Beyond">
         <picture>
-          <source srcset="assets/logo-sm.webp" type="image/webp" />
-          <img src="assets/logo.jpg" alt="BeLux Beyond" width="80" height="80" />
+          <source srcset="../assets/logo-sm.webp" type="image/webp" />
+          <img src="../assets/logo.jpg" alt="BeLux Beyond" width="80" height="80" />
         </picture>
       </div>
-      <a class="nav-logo-name" href="index.html">BeLux Beyond</a>
+      <a class="nav-logo-name" href="../index.html">BeLux Beyond</a>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
       <span aria-hidden="true"></span>
@@ -115,51 +110,61 @@
   </nav>
 
   <ul class="nav-links" id="nav-links">
-    <li><a class="nav-link" href="index.html">Home</a></li>
-    <li><a class="nav-link" href="about.html">About</a></li>
-    <li><a class="nav-link" href="gallery.html">Gallery</a></li>
-    <li><a class="nav-link" href="wallpapers.html">Wallpapers</a></li>
-    <li><a class="nav-link" href="worlds.html">Worlds</a></li>
-    <li><a class="nav-link is-active" href="blog.html">Studio</a></li>
-    <li><a class="nav-link" href="contact.html">Contact</a></li>
+    <li><a class="nav-link" href="../index.html">Home</a></li>
+    <li><a class="nav-link" href="../about.html">About</a></li>
+    <li><a class="nav-link" href="../gallery.html">Gallery</a></li>
+    <li><a class="nav-link" href="../wallpapers.html">Wallpapers</a></li>
+    <li><a class="nav-link" href="../worlds.html">Worlds</a></li>
+    <li><a class="nav-link is-active" href="../blog.html">Studio</a></li>
+    <li><a class="nav-link" href="../contact.html">Contact</a></li>
   </ul>
 
-  <header class="about-header">
-    <p class="about-eyebrow">BeLux Beyond</p>
-    <h1 class="about-heading">News From The Studio</h1>
-    <p class="about-subtitle">Dispatches from the Beyondverse.</p>
-  </header>
+  <article class="post-section" aria-label="Blog post">
+    <div class="post-inner">
 
-  <section class="blog-section" aria-label="Studio posts">
-    <div class="blog-inner">
+      <a class="post-back" href="../blog.html">← News From The Studio</a>
 
-      <a class="blog-post-card" href="blog/the-new-site.html">
-        <div class="blog-post-meta">
-          <span class="blog-post-date">17 May 2026</span>
-          <span class="blog-post-tag">Studio</span>
-        </div>
-        <h2 class="blog-post-title">The New Site</h2>
-        <p class="blog-post-excerpt">The old site was a list of links. The Beyondverse was never just a list of links. Here's what's in the new one — and where things are heading.</p>
-        <span class="blog-read-more">Read more →</span>
-      </a>
+      <div class="post-meta">
+        <span class="post-date">17 May 2026</span>
+        <span class="post-tag">Studio</span>
+      </div>
 
-      <!-- ── ADD NEW POSTS ABOVE THIS LINE ───────────────
-           Copy a blog/post-*.html file, update its content,
-           then add a new <a class="blog-post-card"> entry here.
-      ─────────────────────────────────────────────────── -->
+      <h1 class="post-title">The New Site</h1>
 
-      <a class="blog-post-card" href="blog/welcome-to-the-studio.html">
-        <div class="blog-post-meta">
-          <span class="blog-post-date">10 May 2026</span>
-          <span class="blog-post-tag">The Beyondverse</span>
-        </div>
-        <h2 class="blog-post-title">Welcome to the Studio</h2>
-        <p class="blog-post-excerpt">This is where the work lives between the work. World lore, new pieces, the thinking behind the Beyondverse — all of it, straight from the source.</p>
-        <span class="blog-read-more">Read more →</span>
-      </a>
+      <div class="post-body">
+
+        <p>The old site was a list of links. It did its job. But the Beyondverse was never just a list of links — it's a named universe with real geography, real lore, and a reason to exist beyond selling prints. The new site tries to reflect that.</p>
+
+        <p>Here's what's in it now, and where things are heading.</p>
+
+        <h2>What's Here</h2>
+
+        <p><strong>The Gallery</strong> is the centrepiece. Fifteen pieces across six canonical biomes — The Luminous Wilds, The Drift, The Threshold, The Outer Gardens, The Mirror Moors, and The Quiet. Each biome has its own filter. Click a biome, see its world. Click a piece, it opens full screen. More art is being added regularly — the goal is for every biome to feel fully inhabited.</p>
+
+        <p><strong>Free Wallpapers</strong> are available directly from the site. Six wallpapers now, formatted for phone screens. This has always been part of the Beyondverse philosophy — not everything needs a price tag. Some things are just for you.</p>
+
+        <p><strong>Virtual Worlds</strong> documents the Sansar side of things. Three worlds are live: Renegades Wonderland, Pixie Punk Palace, and BeLux World. These are actual places you can walk through — the Beyondverse rendered in three dimensions. The page has previews and links to each world.</p>
+
+        <p><strong>The Studio</strong> — which you're reading right now — is a flat-file blog. No algorithm, no platform dependency. Just posts, published when there's something worth saying.</p>
+
+        <h2>What's Coming</h2>
+
+        <p>The biomes are the main priority. The Luminous Wilds and The Drift both have room for more — expect new pieces over the coming weeks as the collection grows. The Mirror Moors is also developing its identity, and I want to give The Quiet the weight it deserves.</p>
+
+        <p>More wallpapers are coming. The current set is a starting point — the plan is to build out each biome with at least one dedicated wallpaper so people can carry a piece of their world with them.</p>
+
+        <p>And there's lore. The Beyondverse has a history that predates any of the art — places, events, the logic of how each biome came to be. Some of that will start appearing here in the Studio, not as documentation but as world dispatches. The kind of thing you'd find if you happened across a journal left behind in The Threshold.</p>
+
+        <blockquote>"The Dream Is Real." — that's the only promise this site makes. Everything else is just showing you the evidence.</blockquote>
+
+        <p>If you want to follow along, the best ways are still Instagram, the Substack, and just bookmarking this page. No newsletter signup required.</p>
+
+        <p>Welcome back to the Beyondverse.</p>
+
+      </div>
 
     </div>
-  </section>
+  </article>
 
   <footer class="site-footer">
     <div class="footer-inner">
@@ -202,10 +207,10 @@
         </li>
       </ul>
       <p class="footer-signoff">&ldquo;The Dream Is Real.&rdquo; — Welcome back to the Beyondverse.</p>
-      <p class="footer-legal"><a href="privacy.html">Privacy Policy</a></p>
+      <p class="footer-legal"><a href="../privacy.html">Privacy Policy</a></p>
     </div>
   </footer>
 
-  <script src="main.js" defer></script>
+  <script src="../main.js" defer></script>
 </body>
 </html>
