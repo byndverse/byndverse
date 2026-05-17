@@ -194,7 +194,7 @@
 
         <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
 
-        <button class="form-submit" type="submit" disabled aria-disabled="true">Send Message</button>
+        <button class="form-submit" type="submit">Send Message</button>
       </form>
     </div>
   </section>
@@ -252,37 +252,20 @@
     const _status = document.getElementById(‘form-status’);
     const _btn    = _form.querySelector(‘.form-submit’);
 
-    // Exposed on window so hCaptcha data-callback can reach them
-    window.captchaSolved = function () {
-      _btn.disabled = false;
-      _btn.removeAttribute(‘aria-disabled’);
-    };
-    window.captchaExpired = function () {
-      _btn.disabled = true;
-      _btn.setAttribute(‘aria-disabled’, ‘true’);
-    };
-
-    // Fallback: web3forms may not honour data-callback, so poll the
-    // hidden h-captcha-response field hCaptcha always populates.
-    // Search the whole document (widget may render outside the form).
-    (function () {
-      var prev = ‘’;
-      setInterval(function () {
-        var val = ‘’;
-        try { if (typeof hcaptcha !== ‘undefined’) val = hcaptcha.getResponse() || ‘’; } catch (e) {}
-        if (!val) {
-          var cr = document.querySelector(‘[name="h-captcha-response"]’);
-          if (cr) val = cr.value || ‘’;
-        }
-        if (val && val !== prev) { window.captchaSolved(); }
-        if (!val && prev)        { window.captchaExpired(); }
-        prev = val;
-      }, 300);
-    })();
+    function getCaptchaResponse() {
+      try { if (typeof hcaptcha !== ‘undefined’) return hcaptcha.getResponse() || ‘’; } catch (e) {}
+      const cr = document.querySelector(‘[name="h-captcha-response"]’);
+      return cr ? cr.value || ‘’ : ‘’;
+    }
 
     _form.addEventListener(‘submit’, async function (e) {
       e.preventDefault();
-      if (_btn.disabled) return;
+
+      if (!getCaptchaResponse()) {
+        _status.className = ‘form-status is-error’;
+        _status.textContent = ‘Please complete the captcha before sending.’;
+        return;
+      }
 
       _btn.disabled = true;
       _btn.textContent = ‘Sending…’;
@@ -298,19 +281,17 @@
         const data = await res.json();
 
         if (data.success) {
-          _status.textContent = ‘Message sent — I’ll be in touch soon.’;
+          _status.textContent = ‘Message sent — I\’ll be in touch soon.’;
           _status.classList.add(‘is-success’);
           _form.reset();
-          window.captchaExpired();
         } else {
           throw new Error(data.message || ‘Send failed’);
         }
       } catch (err) {
         _status.textContent = ‘Something went wrong. Please try again shortly.’;
         _status.classList.add(‘is-error’);
-        const cr = _form.querySelector(‘[name="h-captcha-response"]’);
-        if (cr && cr.value) _btn.disabled = false;
       } finally {
+        _btn.disabled = false;
         _btn.textContent = ‘Send Message’;
       }
     });
