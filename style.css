@@ -712,7 +712,7 @@ body {
   position: relative;
   z-index: 1;
   background: var(--bg);
-  padding: 8rem 2rem;
+  padding: 2rem 2rem 8rem;
 }
 
 .wallpapers-inner {
@@ -834,7 +834,7 @@ body {
 
 @media (max-width: 500px) {
   .wallpapers-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
-  .wallpapers-section { padding: 6rem 1.25rem; }
+  .wallpapers-section { padding: 1.5rem 1.25rem 5rem; }
 }
 
 /* ── Contact form ─────────────────────────────────────── */
