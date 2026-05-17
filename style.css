@@ -176,7 +176,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1101,6 +1101,7 @@ body {
   .nav-logo-name { display: none; }
   .nav-toggle { display: flex; }
   .nav-links {
+    display: flex;
     position: fixed;
     inset: 0;
     flex-direction: column;
@@ -1113,7 +1114,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition);
-    z-index: 11;
+    z-index: 15;
   }
   .nav-links.is-open {
     opacity: 1;

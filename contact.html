@@ -48,7 +48,7 @@
     .cursor-glow{position:fixed;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(200,149,58,0.07) 0%,transparent 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:0}
     .will-reveal{opacity:0;transform:translateY(30px);transition:opacity var(--transition-slow),transform var(--transition-slow)}
     .will-reveal.is-revealed{opacity:1;transform:translateY(0)}
-    .site-nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;transition:background var(--transition),border-color var(--transition);border-bottom:1px solid transparent}
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;transition:background var(--transition),border-color var(--transition);border-bottom:1px solid transparent}
     .site-nav.is-scrolled{background:rgba(10,10,15,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--border)}
     .nav-logo{display:flex;align-items:center;gap:0.875rem}
     .hero-logo-wrap{position:relative;width:42px;height:42px;border-radius:50%;overflow:hidden;cursor:pointer;flex-shrink:0;border:1px solid rgba(200,149,58,0.32);transition:border-color var(--transition)}
@@ -62,12 +62,12 @@
     .about-eyebrow{font-family:'Cormorant Garamond',serif;font-size:0.72rem;font-weight:500;letter-spacing:0.34em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5rem}
     .about-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:500;line-height:1.06;color:var(--text);margin-bottom:1rem}
     .about-subtitle{font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:300;color:var(--text-muted);letter-spacing:0.08em}
-    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:12}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:21}
     .nav-toggle span{display:block;width:22px;height:2px;background:rgba(240,236,224,0.80);border-radius:2px;transition:transform var(--transition),opacity var(--transition)}
     .nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-toggle.is-open span:nth-child(2){opacity:0;width:0}
     .nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:11}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}.about-header{padding:9rem 1.5rem 5rem}}
+    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:15}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}.about-header{padding:9rem 1.5rem 5rem}}
   </style>
   <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="style.css" /></noscript>

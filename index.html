@@ -56,7 +56,7 @@
     .hero-bg{position:absolute;inset:0;z-index:1;display:block}
     .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
     .hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(0,0,0,0.48) 0%,rgba(10,8,20,0.60) 55%,rgba(10,10,15,0.84) 100%)}
-    .site-nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;transition:background var(--transition),border-color var(--transition);border-bottom:1px solid transparent}
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;transition:background var(--transition),border-color var(--transition);border-bottom:1px solid transparent}
     .site-nav.is-scrolled{background:rgba(10,10,15,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--border)}
     .nav-logo{display:flex;align-items:center;gap:0.875rem}
     .hero-logo-wrap{position:relative;width:42px;height:42px;border-radius:50%;overflow:hidden;cursor:pointer;flex-shrink:0;border:1px solid rgba(200,149,58,0.32);transition:border-color var(--transition)}
@@ -73,12 +73,12 @@
     @keyframes heroFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
     .scroll-cue{position:absolute;bottom:2.25rem;left:50%;transform:translateX(-50%);z-index:4;color:rgba(240,236,224,0.28);font-size:1.6rem;line-height:1;user-select:none;pointer-events:none;animation:scrollBounce 2.4s ease-in-out infinite}
     @keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0);opacity:0.28}50%{transform:translateX(-50%) translateY(9px);opacity:0.62}}
-    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:12}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:21}
     .nav-toggle span{display:block;width:22px;height:2px;background:rgba(240,236,224,0.80);border-radius:2px;transition:transform var(--transition),opacity var(--transition)}
     .nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-toggle.is-open span:nth-child(2){opacity:0;width:0}
     .nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:11}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}}
+    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:15}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}}
   </style>
   <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="style.css" /></noscript>
