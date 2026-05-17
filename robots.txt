@@ -1,5 +1,100 @@
+# ── Block all unrecognised bots ───────────────────
 User-agent: *
+Disallow: /
+Disallow: /privacy.html
+
+# ── Major search engines ──────────────────────────
+User-agent: Googlebot
 Allow: /
 Disallow: /privacy.html
 
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Slurp
+Allow: /
+Disallow: /privacy.html
+
+User-agent: DuckDuckBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /privacy.html
+
+User-agent: YandexBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Applebot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Sogou
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Exabot
+Allow: /
+Disallow: /privacy.html
+
+# ── AI crawlers ───────────────────────────────────
+User-agent: GPTBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /privacy.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /privacy.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Diffbot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Bytespider
+Allow: /
+Disallow: /privacy.html
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+Disallow: /privacy.html
+
+User-agent: FacebookBot
+Allow: /
+Disallow: /privacy.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /privacy.html
+
+# ── Sitemap ───────────────────────────────────────
 Sitemap: https://byndverse.io/sitemap.xml
