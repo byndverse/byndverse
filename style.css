@@ -963,7 +963,7 @@ body {
 .about-header {
   position: relative;
   z-index: 1;
-  padding: 14rem 2rem 8rem;
+  padding: 14rem 2rem 3rem;
   text-align: center;
 }
 
@@ -1127,7 +1127,7 @@ body {
   }
   .nav-link.is-active,
   .nav-link:hover { color: var(--accent); }
-  .about-header { padding: 9rem 1.5rem 5rem; }
+  .about-header { padding: 9rem 1.5rem 2rem; }
   .bio-section, .artist-statement { padding: 6rem 1.5rem; }
 
   .site-footer { padding: 4rem 1.5rem 2.5rem; }
