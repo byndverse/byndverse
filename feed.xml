@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News From The Studio — BeLux Beyond</title>
+    <link>https://byndverse.io/blog.html</link>
+    <description>Dispatches from the Beyondverse — world lore, new works, and studio updates from BeLux Beyond.</description>
+    <language>en</language>
+    <atom:link href="https://byndverse.io/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 May 2026 00:00:00 +0000</lastBuildDate>
+
+    <item>
+      <title>The New Site</title>
+      <link>https://byndverse.io/blog/the-new-site.html</link>
+      <guid isPermaLink="true">https://byndverse.io/blog/the-new-site.html</guid>
+      <pubDate>Sat, 17 May 2026 00:00:00 +0000</pubDate>
+      <category>Studio</category>
+      <description>The old site was a list of links. The Beyondverse was never just a list of links. Here&apos;s what&apos;s in the new one — and where things are heading.</description>
+    </item>
+
+    <item>
+      <title>Welcome to the Studio</title>
+      <link>https://byndverse.io/blog/welcome-to-the-studio.html</link>
+      <guid isPermaLink="true">https://byndverse.io/blog/welcome-to-the-studio.html</guid>
+      <pubDate>Sat, 10 May 2026 00:00:00 +0000</pubDate>
+      <category>The Beyondverse</category>
+      <description>This is where the work lives between the work. World lore, new pieces, the thinking behind the Beyondverse — all of it, straight from the source.</description>
+    </item>
+
+  </channel>
+</rss>
