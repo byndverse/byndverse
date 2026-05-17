@@ -655,12 +655,12 @@ body {
   align-items: center;
 }
 
-.world-card:nth-child(even) {
-  direction: rtl;
+.world-card:nth-child(even) .world-card-img-wrap {
+  order: 2;
 }
 
-.world-card:nth-child(even) > * {
-  direction: ltr;
+.world-card:nth-child(even) .world-card-meta {
+  order: 1;
 }
 
 .world-card-img-wrap {
@@ -816,8 +816,9 @@ body {
   .world-card {
     grid-template-columns: 1fr;
   }
-  .world-card:nth-child(even) {
-    direction: ltr;
+  .world-card:nth-child(even) .world-card-img-wrap,
+  .world-card:nth-child(even) .world-card-meta {
+    order: unset;
   }
   .worlds-grid {
     gap: 4rem;
