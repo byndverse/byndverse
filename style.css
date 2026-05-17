@@ -1200,19 +1200,8 @@ body {
   color: var(--text);
 }
 
-.video-feature {
-  position: relative;
-  z-index: 1;
-  background: var(--bg);
-  padding: 5rem 2rem 7rem;
-  text-align: center;
-}
-
-.video-feature .bio-inner {
-  max-width: 900px;
-}
-
 .video-wrap {
+  margin: 2.5rem 0;
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
