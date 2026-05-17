@@ -4,22 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0f" />
-  <link rel="canonical" href="https://byndverse.io/contact.html" />
-  <title>Contact — BeLux Beyond | The Beyondverse</title>
-  <meta name="description" content="Get in touch with BeLux Beyond — collaborations, licensing, exhibitions, and general enquiries." />
+  <link rel="canonical" href="https://byndverse.io/gallery.html" />
+  <title>Gallery — The Beyondverse Collection | BeLux Beyond</title>
+  <meta name="description" content="Browse the Beyondverse art collection by BeLux Beyond. Explore artworks organised across the six canonical biomes of the Beyondverse universe." />
 
-  <meta property="og:title" content="Contact — BeLux Beyond" />
-  <meta property="og:description" content="Get in touch with BeLux Beyond — collaborations, licensing, exhibitions, and general enquiries." />
+  <meta property="og:title" content="Gallery — The Beyondverse Collection | BeLux Beyond" />
+  <meta property="og:description" content="Artworks from the six canonical biomes of the Beyondverse — The Luminous Wilds, The Drift, The Threshold, The Outer Gardens, The Mirror Moors, and The Quiet." />
   <meta property="og:image" content="https://byndverse.io/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://byndverse.io/contact.html" />
+  <meta property="og:image:alt" content="Visionary art from the Beyondverse by BeLux Beyond" />
+  <meta property="og:url" content="https://byndverse.io/gallery.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Beyondverse" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@beluxbeyond" />
-  <meta name="twitter:title" content="Contact — BeLux Beyond" />
-  <meta name="twitter:description" content="Get in touch with BeLux Beyond — collaborations, licensing, exhibitions, and general enquiries." />
+  <meta name="twitter:title" content="Gallery — The Beyondverse Collection" />
+  <meta name="twitter:description" content="Artworks from the six canonical biomes of the Beyondverse by BeLux Beyond." />
   <meta name="twitter:image" content="https://byndverse.io/assets/og-image.jpg" />
 
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
@@ -67,7 +68,17 @@
     .nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-toggle.is-open span:nth-child(2){opacity:0;width:0}
     .nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .gallery-section{position:relative;z-index:1;padding:5rem 2rem 9rem}
+    .gallery-inner{max-width:1200px;margin:0 auto}
+    .gallery-filters{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-bottom:4rem}
+    .gallery-filter{padding:0.45rem 1.1rem;border:1px solid rgba(240,236,224,0.07);border-radius:2rem;background:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.10em;text-transform:uppercase;color:rgba(240,236,224,0.52);transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
+    .gallery-filter:hover,.gallery-filter.is-active{border-color:#c8953a;color:#c8953a;background:rgba(200,149,58,0.13)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem 2rem}
+    .gallery-empty-wrap{aspect-ratio:4/3;border:1px dashed rgba(240,236,224,0.07);border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem}
+    .gallery-card[hidden]{display:none}
+    @media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:19}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}.about-header{padding:6rem 1.5rem 0}}
+    @media(max-width:560px){.gallery-grid{grid-template-columns:1fr}}
   </style>
   <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="style.css" /></noscript>
@@ -105,95 +116,128 @@
   </nav>
 
   <ul class="nav-links" id="nav-links">
-      <li><a class="nav-link" href="index.html">Home</a></li>
-      <li><a class="nav-link" href="about.html">About</a></li>
-      <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+    <li><a class="nav-link" href="index.html">Home</a></li>
+    <li><a class="nav-link" href="about.html">About</a></li>
+    <li><a class="nav-link is-active" href="gallery.html">Gallery</a></li>
     <li><a class="nav-link" href="wallpapers.html">Wallpapers</a></li>
-      <li><a class="nav-link" href="worlds.html">Worlds</a></li>
-      <li><a class="nav-link is-active" href="contact.html">Contact</a></li>
-    </ul>
+    <li><a class="nav-link" href="worlds.html">Worlds</a></li>
+    <li><a class="nav-link" href="contact.html">Contact</a></li>
+  </ul>
 
   <!-- Page header -->
   <header class="about-header">
-    <p class="about-eyebrow">Get In Touch</p>
-    <h1 class="about-heading">Contact</h1>
-    <p class="about-subtitle">Collaborations · Licensing · Exhibitions · General Enquiries</p>
+    <p class="about-eyebrow">The Beyondverse</p>
+    <h1 class="about-heading">The Collection</h1>
+    <p class="about-subtitle">Six biomes. One universe.</p>
   </header>
 
-  <!-- Contact form -->
-  <section class="contact-section" aria-label="Contact form">
-    <div class="contact-inner">
-      <form
-        id="contact-form"
-        class="contact-form"
-        action="https://api.web3forms.com/submit"
-        method="POST"
-        novalidate
-      >
-        <!-- Web3Forms access key — replace with key from web3forms.com -->
-        <input type="hidden" name="access_key" value="a788bb92-4244-42d4-b5a6-bd8e5b3561a5" />
-        <input type="hidden" name="subject" value="New message from byndverse.io" />
-        <input type="hidden" name="from_name" value="Beyondverse Contact Form" />
-        <input type="hidden" name="redirect" value="false" />
-        <!-- Honeypot spam filter -->
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" />
+  <!-- Gallery -->
+  <section class="gallery-section" aria-label="Art gallery">
+    <div class="gallery-inner">
 
-        <div class="form-group">
-          <label class="form-label" for="name">Name</label>
-          <input
-            class="form-input"
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your name"
-            required
-            autocomplete="name"
-          />
-        </div>
+      <!-- Biome filter bar -->
+      <div class="gallery-filters" role="group" aria-label="Filter by biome">
+        <button class="gallery-filter is-active" data-filter="all">All</button>
+        <button class="gallery-filter" data-filter="luminous-wilds">The Luminous Wilds</button>
+        <button class="gallery-filter" data-filter="drift">The Drift</button>
+        <button class="gallery-filter" data-filter="threshold">The Threshold</button>
+        <button class="gallery-filter" data-filter="outer-gardens">The Outer Gardens</button>
+        <button class="gallery-filter" data-filter="the-mirror-moors">The Mirror Moors</button>
+        <button class="gallery-filter" data-filter="the-quiet">The Quiet</button>
+      </div>
 
-        <div class="form-group">
-          <label class="form-label" for="email">Email</label>
-          <input
-            class="form-input"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-            autocomplete="email"
-          />
-        </div>
+      <div class="gallery-grid">
 
-        <div class="form-group">
-          <label class="form-label" for="subject">Subject</label>
-          <input
-            class="form-input"
-            type="text"
-            id="subject"
-            name="subject_line"
-            placeholder="Collaboration, licensing, general enquiry…"
-          />
-        </div>
+        <!-- The Luminous Wilds — coming soon -->
+        <article class="art-piece gallery-card" data-biome="luminous-wilds">
+          <div class="gallery-empty-wrap">
+            <p class="gallery-empty-label">The Luminous Wilds</p>
+            <p class="gallery-empty-sub">Coming soon</p>
+          </div>
+          <div class="art-meta">
+            <p class="art-biome">THE LUMINOUS WILDS</p>
+            <h2 class="art-name">Coming Soon</h2>
+            <p class="art-desc">Where memory becomes geography. Rivers that glow because they remember every dawn they carried.</p>
+          </div>
+        </article>
 
-        <div class="form-group">
-          <label class="form-label" for="message">Message</label>
-          <textarea
-            class="form-textarea"
-            id="message"
-            name="message"
-            placeholder="Tell me what's on your mind."
-            required
-          ></textarea>
-        </div>
+        <!-- The Drift — gallery-2: The Drifting Isles -->
+        <article class="art-piece gallery-card" data-biome="drift">
+          <button class="art-img-wrap" aria-label="View The Drifting Isles in full screen">
+            <picture>
+              <source srcset="assets/gallery/gallery-2.webp" type="image/webp" />
+              <img src="assets/gallery/gallery-2.jpg" alt="The Drifting Isles — floating landmasses suspended in amber light above an endless void, The Drift biome" loading="lazy" decoding="async" />
+            </picture>
+          </button>
+          <div class="art-meta">
+            <p class="art-biome">THE DRIFT</p>
+            <h2 class="art-name">The Drifting Isles</h2>
+            <p class="art-desc">Where the self becomes the sea. Islands untethered from gravity, carried on currents only the dreaming can feel.</p>
+          </div>
+        </article>
 
-        <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+        <!-- The Threshold — gallery-3: The Gatehouse -->
+        <article class="art-piece gallery-card" data-biome="threshold">
+          <button class="art-img-wrap" aria-label="View The Gatehouse in full screen">
+            <picture>
+              <source srcset="assets/gallery/gallery-3.webp" type="image/webp" />
+              <img src="assets/gallery/gallery-3.jpg" alt="The Gatehouse — an ancient stone arch blazing with celestial fire at the boundary between worlds, The Threshold biome" loading="lazy" decoding="async" />
+            </picture>
+          </button>
+          <div class="art-meta">
+            <p class="art-biome">THE THRESHOLD</p>
+            <h2 class="art-name">The Gatehouse</h2>
+            <p class="art-desc">You are seen before you enter. The Gatehouse stands where endings become beginnings — passage costs nothing but the willingness to cross.</p>
+          </div>
+        </article>
 
-        <button class="form-submit" type="submit">Send Message</button>
-      </form>
+        <!-- The Outer Gardens — gallery-1: River of Flames -->
+        <article class="art-piece gallery-card" data-biome="outer-gardens">
+          <button class="art-img-wrap" aria-label="View River of Flames in full screen">
+            <picture>
+              <source srcset="assets/gallery/gallery-1.webp" type="image/webp" />
+              <img src="assets/gallery/gallery-1.jpg" alt="River of Flames — a luminous river of molten amber and gold winding through the Outer Gardens at dusk" loading="lazy" decoding="async" />
+            </picture>
+          </button>
+          <div class="art-meta">
+            <p class="art-biome">THE OUTER GARDENS</p>
+            <h2 class="art-name">River of Flames</h2>
+            <p class="art-desc">Where the cosmos is still a living thing — vast, tended, intimate. This river does not burn. It illuminates.</p>
+          </div>
+        </article>
+
+        <!-- The Mirror Moors — gallery-4: The Red Shore -->
+        <article class="art-piece gallery-card" data-biome="the-mirror-moors">
+          <button class="art-img-wrap" aria-label="View The Red Shore in full screen">
+            <picture>
+              <source srcset="assets/gallery/gallery-4.webp" type="image/webp" />
+              <img src="assets/gallery/gallery-4.jpg" alt="The Red Shore — a vast crimson coastline where the sky and sea bleed into one at the edge of the Mirror Moors" loading="lazy" decoding="async" />
+            </picture>
+          </button>
+          <div class="art-meta">
+            <p class="art-biome">THE MIRROR MOORS</p>
+            <h2 class="art-name">The Red Shore</h2>
+            <p class="art-desc">At the edge of reflection, nothing lies. The Moors show you what you are — not what you fear you might be.</p>
+          </div>
+        </article>
+
+        <!-- The Quiet — coming soon -->
+        <article class="art-piece gallery-card" data-biome="the-quiet">
+          <div class="gallery-empty-wrap">
+            <p class="gallery-empty-label">The Quiet</p>
+            <p class="gallery-empty-sub">Coming soon</p>
+          </div>
+          <div class="art-meta">
+            <p class="art-biome">THE QUIET</p>
+            <h2 class="art-name">Coming Soon</h2>
+            <p class="art-desc">Where stillness is not empty — it is full. The Quiet is the space between breaths where everything is decided.</p>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
       <ul class="footer-links">
@@ -240,42 +284,5 @@
   </footer>
 
   <script src="main.js" defer></script>
-  <script>
-    const _form   = document.getElementById(‘contact-form’);
-    const _status = document.getElementById(‘form-status’);
-    const _btn    = _form.querySelector(‘.form-submit’);
-
-    _form.addEventListener(‘submit’, async function (e) {
-      e.preventDefault();
-
-      _btn.disabled = true;
-      _btn.textContent = ‘Sending…’;
-      _status.className = ‘form-status’;
-      _status.textContent = ‘’;
-
-      try {
-        const res  = await fetch(_form.action, {
-          method:  ‘POST’,
-          body:    new FormData(_form),
-          headers: { ‘Accept’: ‘application/json’ }
-        });
-        const data = await res.json();
-
-        if (data.success) {
-          _status.textContent = ‘Message sent — I\’ll be in touch soon.’;
-          _status.classList.add(‘is-success’);
-          _form.reset();
-        } else {
-          throw new Error(data.message || ‘Send failed’);
-        }
-      } catch (err) {
-        _status.textContent = ‘Something went wrong. Please try again shortly.’;
-        _status.classList.add(‘is-error’);
-      } finally {
-        _btn.disabled = false;
-        _btn.textContent = ‘Send Message’;
-      }
-    });
-  </script>
 </body>
 </html>

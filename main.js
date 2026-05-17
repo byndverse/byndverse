@@ -280,6 +280,19 @@
     }
   }
 
+  /* ── Gallery biome filter ────────────────────────── */
+
+  const filterBtns   = document.querySelectorAll('.gallery-filter');
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  if (filterBtns.length) {
+    filterBtns.forEach(btn => btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const f = btn.dataset.filter;
+      galleryCards.forEach(card => { card.hidden = f !== 'all' && card.dataset.biome !== f; });
+    }));
+  }
+
   /* ── Scroll reveal ────────────────────────────────── */
 
   const revealEls = document.querySelectorAll('.statement, .art-piece, .about, .drifters, .site-footer, .bio-section, .artist-statement, .world-card, .worlds-store');
