@@ -164,11 +164,16 @@
           ></textarea>
         </div>
 
-        <div class="h-captcha" data-captcha="true"></div>
+        <div
+          class="h-captcha"
+          data-captcha="true"
+          data-callback="captchaSolved"
+          data-expired-callback="captchaExpired"
+        ></div>
 
         <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
 
-        <button class="form-submit" type="submit">Send Message</button>
+        <button class="form-submit" type="submit" disabled aria-disabled="true">Send Message</button>
       </form>
     </div>
   </section>
@@ -221,51 +226,55 @@
   <script src="https://web3forms.com/client/script.js" async defer></script>
   <script src="main.js" defer></script>
   <script>
-    (function () {
-      const form   = document.getElementById('contact-form');
-      const status = document.getElementById('form-status');
-      const btn    = form.querySelector('.form-submit');
+    const _form   = document.getElementById(‘contact-form’);
+    const _status = document.getElementById(‘form-status’);
+    const _btn    = _form.querySelector(‘.form-submit’);
 
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
+    // hCaptcha callbacks — enable/disable submit button
+    function captchaSolved() {
+      _btn.disabled = false;
+      _btn.removeAttribute(‘aria-disabled’);
+    }
+    function captchaExpired() {
+      _btn.disabled = true;
+      _btn.setAttribute(‘aria-disabled’, ‘true’);
+    }
 
-        // Block submission if captcha not completed
-        const captchaResponse = form.querySelector('[name="h-captcha-response"]');
-        if (!captchaResponse || !captchaResponse.value) {
-          status.textContent = 'Please tick the captcha before sending.';
-          status.className = 'form-status is-error';
-          return;
+    _form.addEventListener(‘submit’, async function (e) {
+      e.preventDefault();
+      if (_btn.disabled) return;
+
+      _btn.disabled = true;
+      _btn.textContent = ‘Sending…’;
+      _status.className = ‘form-status’;
+      _status.textContent = ‘’;
+
+      try {
+        const res  = await fetch(_form.action, {
+          method:  ‘POST’,
+          body:    new FormData(_form),
+          headers: { ‘Accept’: ‘application/json’ }
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          _status.textContent = ‘Message sent — I’ll be in touch soon.’;
+          _status.classList.add(‘is-success’);
+          _form.reset();
+          captchaExpired(); // re-lock button after successful send
+        } else {
+          throw new Error(data.message || ‘Send failed’);
         }
-
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-        status.className = 'form-status';
-        status.textContent = '';
-
-        try {
-          const res  = await fetch(form.action, {
-            method:  'POST',
-            body:    new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-          const data = await res.json();
-
-          if (data.success) {
-            status.textContent = 'Message sent — I’ll be in touch soon.';
-            status.classList.add('is-success');
-            form.reset();
-          } else {
-            throw new Error(data.message || 'Send failed');
-          }
-        } catch (err) {
-          status.textContent = 'Something went wrong. Please try again shortly.';
-          status.classList.add('is-error');
-        } finally {
-          btn.disabled = false;
-          btn.textContent = 'Send Message';
-        }
-      });
-    })();
+      } catch (err) {
+        _status.textContent = ‘Something went wrong. Please try again shortly.’;
+        _status.classList.add(‘is-error’);
+        // only re-enable if captcha still valid
+        const cr = _form.querySelector(‘[name="h-captcha-response"]’);
+        if (cr && cr.value) _btn.disabled = false;
+      } finally {
+        _btn.textContent = ‘Send Message’;
+      }
+    });
   </script>
 </body>
 </html>
