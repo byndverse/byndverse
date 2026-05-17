@@ -4,26 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0f" />
-  <link rel="canonical" href="https://byndverse.io/contact.html" />
-  <title>Contact — BeLux Beyond | The Beyondverse</title>
-  <meta name="description" content="Get in touch with BeLux Beyond — collaborations, licensing, exhibitions, and general enquiries." />
+  <link rel="canonical" href="https://byndverse.io/worlds.html" />
+  <title>Virtual Worlds — BeLux Beyond | Beyondverse on Sansar</title>
+  <meta name="description" content="Step inside the Beyondverse. BeLux Beyond hosts immersive virtual worlds on Sansar — explore the gallery, the wonderland, and the chill zone." />
 
-  <meta property="og:title" content="Contact — BeLux Beyond" />
-  <meta property="og:description" content="Get in touch with BeLux Beyond — collaborations, licensing, exhibitions, and general enquiries." />
+  <meta property="og:title" content="Virtual Worlds — BeLux Beyond" />
+  <meta property="og:description" content="Step inside the Beyondverse. Immersive virtual worlds hosted on Sansar by BeLux Beyond." />
   <meta property="og:image" content="https://byndverse.io/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://byndverse.io/contact.html" />
+  <meta property="og:image:alt" content="Virtual worlds from the Beyondverse by BeLux Beyond" />
+  <meta property="og:url" content="https://byndverse.io/worlds.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Beyondverse" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@beluxbeyond" />
-  <meta name="twitter:title" content="Contact — BeLux Beyond" />
-  <meta name="twitter:description" content="Get in touch with BeLux Beyond — collaborations, licensing, exhibitions, and general enquiries." />
+  <meta name="twitter:title" content="Virtual Worlds — BeLux Beyond" />
+  <meta name="twitter:description" content="Step inside the Beyondverse. Immersive virtual worlds hosted on Sansar." />
   <meta name="twitter:image" content="https://byndverse.io/assets/og-image.jpg" />
 
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
-
   <link rel="preload" as="image" href="assets/logo-sm.webp" fetchpriority="high" type="image/webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width:761px)" />
@@ -105,97 +105,119 @@
   </nav>
 
   <ul class="nav-links" id="nav-links">
-      <li><a class="nav-link" href="index.html">Home</a></li>
-      <li><a class="nav-link" href="about.html">About</a></li>
-      <li><a class="nav-link" href="wallpapers.html">Wallpapers</a></li>
-      <li><a class="nav-link" href="worlds.html">Worlds</a></li>
-      <li><a class="nav-link is-active" href="contact.html">Contact</a></li>
-    </ul>
+    <li><a class="nav-link" href="index.html">Home</a></li>
+    <li><a class="nav-link" href="about.html">About</a></li>
+    <li><a class="nav-link" href="wallpapers.html">Wallpapers</a></li>
+    <li><a class="nav-link is-active" href="worlds.html">Worlds</a></li>
+    <li><a class="nav-link" href="contact.html">Contact</a></li>
+  </ul>
 
   <!-- Page header -->
   <header class="about-header">
-    <p class="about-eyebrow">Get In Touch</p>
-    <h1 class="about-heading">Contact</h1>
-    <p class="about-subtitle">Collaborations · Licensing · Exhibitions · General Enquiries</p>
+    <p class="about-eyebrow">Sansar</p>
+    <h1 class="about-heading">Virtual Worlds</h1>
+    <p class="about-subtitle">Step inside the Beyondverse</p>
   </header>
 
-  <!-- Contact form -->
-  <section class="contact-section" aria-label="Contact form">
-    <div class="contact-inner">
-      <form
-        id="contact-form"
-        class="contact-form"
-        action="https://api.web3forms.com/submit"
-        method="POST"
-        novalidate
-      >
-        <!-- Web3Forms access key — replace with key from web3forms.com -->
-        <input type="hidden" name="access_key" value="a788bb92-4244-42d4-b5a6-bd8e5b3561a5" />
-        <input type="hidden" name="subject" value="New message from byndverse.io" />
-        <input type="hidden" name="from_name" value="Beyondverse Contact Form" />
-        <input type="hidden" name="redirect" value="false" />
-        <!-- Honeypot spam filter -->
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" />
+  <!-- Intro + video -->
+  <section class="worlds-intro" aria-label="Virtual worlds introduction">
+    <div class="worlds-inner">
+      <p class="section-label">About</p>
+      <div class="worlds-desc">
+        <p>The Beyondverse isn&rsquo;t only something you look at — it&rsquo;s a place you can enter. BeLux Beyond hosts a collection of immersive virtual worlds on <a href="https://www.sansar.com" target="_blank" rel="noopener noreferrer">Sansar</a>, a social virtual reality platform where visitors can explore fully realised 3D environments, walk through art galleries, and inhabit spaces built from the same imagination that drives the visual work.</p>
+        <p>Each world is free to visit. All you need is a Sansar account. Step in, look around, and stay as long as you like.</p>
+      </div>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/Q_x3Ob8-6lw"
+          title="BeLux Beyond virtual worlds on Sansar"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
 
-        <div class="form-group">
-          <label class="form-label" for="name">Name</label>
-          <input
-            class="form-input"
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your name"
-            required
-            autocomplete="name"
-          />
-        </div>
+  <!-- World cards -->
+  <section class="worlds-grid-section" aria-label="Explore the worlds">
+    <div class="worlds-inner">
+      <p class="section-label">Explore</p>
+      <div class="worlds-grid">
 
-        <div class="form-group">
-          <label class="form-label" for="email">Email</label>
-          <input
-            class="form-input"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-            autocomplete="email"
-          />
-        </div>
+        <article class="world-card will-reveal">
+          <a class="world-card-img-wrap" href="https://www.sansar.com/worlds/renegaderabbit/psychedelic-kingdom" target="_blank" rel="noopener noreferrer" aria-label="Visit Renegades Wonderland on Sansar">
+            <picture>
+              <source srcset="assets/world-renegades.webp" type="image/webp" />
+              <img src="assets/world-renegades.jpg" alt="Renegades Wonderland — a giant white rabbit beside a neon ferris wheel under a starlit sky" width="1200" height="675" loading="lazy" />
+            </picture>
+            <span class="world-card-visit">Visit World ↗</span>
+          </a>
+          <div class="world-card-meta">
+            <p class="world-platform">SANSAR · PSYCHEDELIC KINGDOM</p>
+            <h2 class="world-title">Renegades Wonderland</h2>
+            <p class="world-desc">A psychedelic kingdom where oversized white rabbits roam beside neon ferris wheels under a star-dusted sky. Surreal, playful, and impossible in all the right ways.</p>
+            <a class="world-link" href="https://www.sansar.com/worlds/renegaderabbit/psychedelic-kingdom" target="_blank" rel="noopener noreferrer">Enter the Wonderland ↗</a>
+          </div>
+        </article>
 
-        <div class="form-group">
-          <label class="form-label" for="subject">Subject</label>
-          <input
-            class="form-input"
-            type="text"
-            id="subject"
-            name="subject_line"
-            placeholder="Collaboration, licensing, general enquiry…"
-          />
-        </div>
+        <article class="world-card will-reveal">
+          <a class="world-card-img-wrap" href="https://www.sansar.com/worlds/renegaderabbit/belux-chill" target="_blank" rel="noopener noreferrer" aria-label="Visit Pixie Punk Palace on Sansar">
+            <picture>
+              <source srcset="assets/world-pixie.webp" type="image/webp" />
+              <img src="assets/world-pixie.jpg" alt="Pixie Punk Palace — avatars in a lush twilight garden with glowing pathways" width="1200" height="675" loading="lazy" />
+            </picture>
+            <span class="world-card-visit">Visit World ↗</span>
+          </a>
+          <div class="world-card-meta">
+            <p class="world-platform">SANSAR · BELUX CHILL</p>
+            <h2 class="world-title">Pixie Punk Palace</h2>
+            <p class="world-desc">A lush garden retreat bathed in soft twilight. Gather with others, wander the overgrown pathways, and settle into the quiet strangeness of the BeLux chill zone.</p>
+            <a class="world-link" href="https://www.sansar.com/worlds/renegaderabbit/belux-chill" target="_blank" rel="noopener noreferrer">Enter the Palace ↗</a>
+          </div>
+        </article>
 
-        <div class="form-group">
-          <label class="form-label" for="message">Message</label>
-          <textarea
-            class="form-textarea"
-            id="message"
-            name="message"
-            placeholder="Tell me what's on your mind."
-            required
-          ></textarea>
-        </div>
+        <article class="world-card will-reveal">
+          <a class="world-card-img-wrap" href="https://www.sansar.com/worlds/renegaderabbit/jay-salton-art-gallery" target="_blank" rel="noopener noreferrer" aria-label="Visit BeLux World art gallery on Sansar">
+            <picture>
+              <source srcset="assets/world-belux.webp" type="image/webp" />
+              <img src="assets/world-belux.jpg" alt="BeLux World — a floating glass gallery building hovering above rolling green hills with neon light trails" width="1200" height="675" loading="lazy" />
+            </picture>
+            <span class="world-card-visit">Visit World ↗</span>
+          </a>
+          <div class="world-card-meta">
+            <p class="world-platform">SANSAR · JAY SALTON ART GALLERY</p>
+            <h2 class="world-title">BeLux World</h2>
+            <p class="world-desc">Jay Salton&rsquo;s signature virtual gallery — a floating glass space hovering above rolling hills, lit by neon traces and lined with Beyondverse artwork. Walk through the collection in three dimensions.</p>
+            <a class="world-link" href="https://www.sansar.com/worlds/renegaderabbit/jay-salton-art-gallery" target="_blank" rel="noopener noreferrer">Enter the Gallery ↗</a>
+          </div>
+        </article>
 
-        <div
-          class="h-captcha"
-          data-captcha="true"
-          data-callback="captchaSolved"
-          data-expired-callback="captchaExpired"
-        ></div>
+      </div>
+    </div>
+  </section>
 
-        <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+  <!-- Sansar Store -->
+  <section class="worlds-store will-reveal" aria-label="Sansar store">
+    <div class="worlds-store-inner">
+      <p class="worlds-store-eyebrow">Sansar Store</p>
+      <h2 class="worlds-store-heading">Art &amp; Skies, Free &amp; Paid</h2>
+      <p class="worlds-store-desc">Browse the BeLux Beyond Sansar store — a collection of Beyondverse artworks and skyboxes available to use in your own virtual spaces. Both free and paid items available.</p>
+      <a class="worlds-store-cta" href="https://www.sansar.com/store/shops/renegaderabbit?page=1" target="_blank" rel="noopener noreferrer">Visit the Store ↗</a>
+    </div>
+  </section>
 
-        <button class="form-submit" type="submit" disabled aria-disabled="true">Send Message</button>
-      </form>
+  <!-- Drifters CTA -->
+  <section class="drifters" aria-label="Join the Drifters">
+    <div class="drifters-inner">
+      <h2 class="drifters-heading">Become a Drifter</h2>
+      <p class="drifters-sub">
+        Drifters don&rsquo;t just follow the Beyondverse. They inhabit it.<br>
+        New drifts, world lore, and sanctuary pieces — straight to you.
+      </p>
+      <a class="drifters-cta" href="https://beluxbeyond.substack.com" target="_blank" rel="noopener noreferrer">
+        Enter the Drift
+      </a>
     </div>
   </section>
 
@@ -245,58 +267,6 @@
     </div>
   </footer>
 
-  <script src="https://web3forms.com/client/script.js" async defer></script>
   <script src="main.js" defer></script>
-  <script>
-    const _form   = document.getElementById(‘contact-form’);
-    const _status = document.getElementById(‘form-status’);
-    const _btn    = _form.querySelector(‘.form-submit’);
-
-    // hCaptcha callbacks — enable/disable submit button
-    function captchaSolved() {
-      _btn.disabled = false;
-      _btn.removeAttribute(‘aria-disabled’);
-    }
-    function captchaExpired() {
-      _btn.disabled = true;
-      _btn.setAttribute(‘aria-disabled’, ‘true’);
-    }
-
-    _form.addEventListener(‘submit’, async function (e) {
-      e.preventDefault();
-      if (_btn.disabled) return;
-
-      _btn.disabled = true;
-      _btn.textContent = ‘Sending…’;
-      _status.className = ‘form-status’;
-      _status.textContent = ‘’;
-
-      try {
-        const res  = await fetch(_form.action, {
-          method:  ‘POST’,
-          body:    new FormData(_form),
-          headers: { ‘Accept’: ‘application/json’ }
-        });
-        const data = await res.json();
-
-        if (data.success) {
-          _status.textContent = ‘Message sent — I’ll be in touch soon.’;
-          _status.classList.add(‘is-success’);
-          _form.reset();
-          captchaExpired(); // re-lock button after successful send
-        } else {
-          throw new Error(data.message || ‘Send failed’);
-        }
-      } catch (err) {
-        _status.textContent = ‘Something went wrong. Please try again shortly.’;
-        _status.classList.add(‘is-error’);
-        // only re-enable if captcha still valid
-        const cr = _form.querySelector(‘[name="h-captcha-response"]’);
-        if (cr && cr.value) _btn.disabled = false;
-      } finally {
-        _btn.textContent = ‘Send Message’;
-      }
-    });
-  </script>
 </body>
 </html>
