@@ -1205,6 +1205,11 @@ body {
   z-index: 1;
   background: var(--bg);
   padding: 5rem 2rem 7rem;
+  text-align: center;
+}
+
+.video-feature .bio-inner {
+  max-width: 900px;
 }
 
 .video-wrap {
