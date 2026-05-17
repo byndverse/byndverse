@@ -1200,7 +1200,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition);
-    z-index: 15;
+    z-index: 19;
   }
   .nav-links.is-open {
     opacity: 1;
