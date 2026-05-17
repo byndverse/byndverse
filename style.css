@@ -199,6 +199,7 @@ body {
 }
 
 .hero-logo-wrap {
+  display: block;
   position: relative;
   width: 42px;
   height: 42px;
@@ -208,6 +209,7 @@ body {
   flex-shrink: 0;
   border: 1px solid rgba(200, 149, 58, 0.32);
   transition: border-color var(--transition);
+  text-decoration: none;
 }
 
 .hero-logo-wrap:hover {
