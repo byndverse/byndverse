@@ -1112,6 +1112,46 @@ body {
   letter-spacing: 0.05em;
 }
 
+.press-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.press-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--border-acc);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.press-badge:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.press-badge__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.press-badge__name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
 .section-label {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.68rem;
