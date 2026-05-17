@@ -263,13 +263,17 @@
     };
 
     // Fallback: web3forms may not honour data-callback, so poll the
-    // hidden h-captcha-response input that hCaptcha always populates.
+    // hidden h-captcha-response field hCaptcha always populates.
+    // Search the whole document (widget may render outside the form).
     (function () {
       var prev = ‘’;
       setInterval(function () {
-        var cr = _form.querySelector(‘[name="h-captcha-response"]’);
-        if (!cr) return;
-        var val = cr.value;
+        var val = ‘’;
+        try { if (typeof hcaptcha !== ‘undefined’) val = hcaptcha.getResponse() || ‘’; } catch (e) {}
+        if (!val) {
+          var cr = document.querySelector(‘[name="h-captcha-response"]’);
+          if (cr) val = cr.value || ‘’;
+        }
         if (val && val !== prev) { window.captchaSolved(); }
         if (!val && prev)        { window.captchaExpired(); }
         prev = val;
