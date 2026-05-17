@@ -1130,6 +1130,16 @@ body {
   margin-top: 1.75rem;
 }
 
+.bio-body a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+.bio-body a:hover {
+  opacity: 0.75;
+}
+
 .bio-body em {
   font-style: italic;
   color: var(--text);
