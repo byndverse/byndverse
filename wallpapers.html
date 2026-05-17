@@ -57,7 +57,7 @@
     .nav-links{display:flex;gap:2.5rem;list-style:none}
     .nav-link{font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,236,224,0.55);text-decoration:none;transition:color var(--transition)}
     .nav-link:hover,.nav-link.is-active{color:var(--accent)}
-    .about-header{position:relative;z-index:1;padding:14rem 2rem 3rem;text-align:center}
+    .about-header{position:relative;z-index:1;padding:14rem 2rem 0;text-align:center}
     .about-eyebrow{font-family:'Cormorant Garamond',serif;font-size:0.72rem;font-weight:500;letter-spacing:0.34em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5rem}
     .about-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:500;line-height:1.06;color:var(--text);margin-bottom:1rem}
     .about-subtitle{font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:300;color:var(--text-muted);letter-spacing:0.08em}
@@ -66,7 +66,7 @@
     .nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .nav-toggle.is-open span:nth-child(2){opacity:0;width:0}
     .nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:15}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}.about-header{padding:9rem 1.5rem 2rem}}
+    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:15}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}.about-header{padding:9rem 1.5rem 0}}
   </style>
   <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="style.css" /></noscript>
