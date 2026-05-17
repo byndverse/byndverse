@@ -1131,13 +1131,16 @@ body {
 }
 
 .bio-body a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: opacity var(--transition);
+  color: rgba(240, 236, 224, 0.60);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(240, 236, 224, 0.25);
+  transition: color var(--transition), text-decoration-color var(--transition);
 }
 
 .bio-body a:hover {
-  opacity: 0.75;
+  color: var(--text);
+  text-decoration-color: rgba(240, 236, 224, 0.50);
 }
 
 .bio-body em {
