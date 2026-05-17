@@ -228,6 +228,15 @@
 
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
+
+        // Block submission if captcha not completed
+        const captchaResponse = form.querySelector('[name="h-captcha-response"]');
+        if (!captchaResponse || !captchaResponse.value) {
+          status.textContent = 'Please tick the captcha before sending.';
+          status.className = 'form-status is-error';
+          return;
+        }
+
         btn.disabled = true;
         btn.textContent = 'Sending…';
         status.className = 'form-status';
