@@ -898,7 +898,7 @@ body {
   position: relative;
   z-index: 1;
   background: var(--bg);
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
   border-top: 1px solid var(--border-acc);
 }
@@ -1561,8 +1561,8 @@ body {
   .artworld { padding: 4rem 1.25rem; }
 
   .statement,
-  .about,
-  .drifters { padding: 6rem 1.5rem; }
+  .about { padding: 6rem 1.5rem; }
+  .drifters { padding: 2.5rem 1.5rem; }
 
   .site-nav { padding: 1.25rem 1.25rem; }
   .nav-logo-name { display: none; }
