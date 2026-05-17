@@ -312,7 +312,7 @@ body {
 
 .hero-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 8.5vw, 6.5rem);
+  font-size: clamp(2.2rem, 7vw, 6.5rem);
   font-weight: 500;
   line-height: 1.06;
   color: var(--text);
