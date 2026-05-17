@@ -235,6 +235,32 @@ body {
   color: var(--text);
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 12;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(240, 236, 224, 0.80);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition), width var(--transition);
+  transform-origin: center;
+}
+
+.nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
@@ -1073,6 +1099,33 @@ body {
 
   .site-nav { padding: 1.25rem 1.25rem; }
   .nav-logo-name { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.75rem;
+    background: rgba(10, 10, 15, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+    z-index: 11;
+  }
+  .nav-links.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .nav-link {
+    font-size: 1.25rem;
+    letter-spacing: 0.18em;
+    color: rgba(240, 236, 224, 0.65);
+  }
+  .nav-link.is-active,
+  .nav-link:hover { color: var(--accent); }
   .about-header { padding: 9rem 1.5rem 5rem; }
   .bio-section, .artist-statement { padding: 6rem 1.5rem; }
 

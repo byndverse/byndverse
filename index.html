@@ -73,7 +73,12 @@
     @keyframes heroFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
     .scroll-cue{position:absolute;bottom:2.25rem;left:50%;transform:translateX(-50%);z-index:4;color:rgba(240,236,224,0.28);font-size:1.6rem;line-height:1;user-select:none;pointer-events:none;animation:scrollBounce 2.4s ease-in-out infinite}
     @keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0);opacity:0.28}50%{transform:translateX(-50%) translateY(9px);opacity:0.62}}
-    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.orb,#starfield{display:none}}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:12}
+    .nav-toggle span{display:block;width:22px;height:2px;background:rgba(240,236,224,0.80);border-radius:2px;transition:transform var(--transition),opacity var(--transition)}
+    .nav-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle.is-open span:nth-child(2){opacity:0;width:0}
+    .nav-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:11}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}}
   </style>
   <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="style.css" /></noscript>
@@ -95,7 +100,12 @@
       </div>
       <a class="nav-logo-name" href="index.html">BeLux Beyond</a>
     </div>
-    <ul class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a class="nav-link is-active" href="index.html">Home</a></li>
       <li><a class="nav-link" href="about.html">About</a></li>
       <li><a class="nav-link" href="wallpapers.html">Wallpapers</a></li>

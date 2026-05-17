@@ -4,13 +4,45 @@
 
   function lerp(a, b, t) { return a + (b - a) * t; }
 
-  /* ── Nav scroll state ────────────────────────────── */
+  /* ── Nav scroll state & hamburger ───────────────── */
 
   const nav = document.getElementById('site-nav');
   if (nav) {
     window.addEventListener('scroll', () => {
       nav.classList.toggle('is-scrolled', window.scrollY > 40);
     }, { passive: true });
+  }
+
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks  = document.getElementById('nav-links');
+
+  if (navToggle && navLinks) {
+    function openMenu() {
+      navLinks.classList.add('is-open');
+      navToggle.classList.add('is-open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Close menu');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      navLinks.classList.remove('is-open');
+      navToggle.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+      document.body.style.overflow = '';
+    }
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navLinks.classList.contains('is-open')) closeMenu();
+    });
   }
 
   /* ── Starfield canvas ─────────────────────────────── */
