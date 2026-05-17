@@ -185,13 +185,6 @@
           ></textarea>
         </div>
 
-        <div
-          class="h-captcha"
-          data-captcha="true"
-          data-callback="captchaSolved"
-          data-expired-callback="captchaExpired"
-        ></div>
-
         <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
 
         <button class="form-submit" type="submit">Send Message</button>
@@ -245,27 +238,14 @@
     </div>
   </footer>
 
-  <script src="https://web3forms.com/client/script.js" async defer></script>
   <script src="main.js" defer></script>
   <script>
     const _form   = document.getElementById(‘contact-form’);
     const _status = document.getElementById(‘form-status’);
     const _btn    = _form.querySelector(‘.form-submit’);
 
-    function getCaptchaResponse() {
-      try { if (typeof hcaptcha !== ‘undefined’) return hcaptcha.getResponse() || ‘’; } catch (e) {}
-      const cr = document.querySelector(‘[name="h-captcha-response"]’);
-      return cr ? cr.value || ‘’ : ‘’;
-    }
-
     _form.addEventListener(‘submit’, async function (e) {
       e.preventDefault();
-
-      if (!getCaptchaResponse()) {
-        _status.className = ‘form-status is-error’;
-        _status.textContent = ‘Please complete the captcha before sending.’;
-        return;
-      }
 
       _btn.disabled = true;
       _btn.textContent = ‘Sending…’;
