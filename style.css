@@ -1143,16 +1143,21 @@ body {
   background: none;
 }
 
-.press-badge--img img {
-  display: block;
-  width: min(480px, 100%);
-  height: auto;
-  opacity: 0.90;
-  transition: opacity var(--transition);
+.press-badge-bg {
+  background: #e8e6e0;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  transition: background var(--transition);
 }
 
-.press-badge--img:hover img {
-  opacity: 1;
+.press-badge--img:hover .press-badge-bg {
+  background: #f0ece4;
+}
+
+.press-badge--img img {
+  display: block;
+  width: min(420px, 100%);
+  height: auto;
 }
 
 .section-label {
