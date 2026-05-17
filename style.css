@@ -1135,21 +1135,22 @@ body {
   background: var(--accent-dim);
 }
 
-.press-badge__label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+.press-badge--img {
+  padding: 0;
+  border: none;
+  background: none;
 }
 
-.press-badge__name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--accent);
-  letter-spacing: 0.04em;
+.press-badge--img img {
+  display: block;
+  width: 260px;
+  height: auto;
+  opacity: 0.90;
+  transition: opacity var(--transition);
+}
+
+.press-badge--img:hover img {
+  opacity: 1;
 }
 
 .section-label {
