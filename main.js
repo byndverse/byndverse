@@ -282,7 +282,7 @@
 
   /* ── Scroll reveal ────────────────────────────────── */
 
-  const revealEls = document.querySelectorAll('.statement, .art-piece, .about, .drifters, .site-footer, .bio-section, .artist-statement');
+  const revealEls = document.querySelectorAll('.statement, .art-piece, .about, .drifters, .site-footer, .bio-section, .artist-statement, .world-card, .worlds-store');
   revealEls.forEach(el => el.classList.add('will-reveal'));
 
   const observer = new IntersectionObserver((entries) => {
