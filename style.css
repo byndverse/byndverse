@@ -1200,6 +1200,30 @@ body {
   color: var(--text);
 }
 
+.video-feature {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  padding: 5rem 2rem 7rem;
+}
+
+.video-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .artist-statement {
   position: relative;
   z-index: 1;
