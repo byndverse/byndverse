@@ -948,6 +948,15 @@ body {
   outline: none;
 }
 
+.drifters-embed {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+.drifters-embed iframe {
+  max-width: 100%;
+}
+
 /* ── Footer ───────────────────────────────────────────── */
 
 .site-footer {
