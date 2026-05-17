@@ -1085,6 +1085,10 @@ body {
   text-align: center;
 }
 
+.portrait--wide {
+  max-width: 780px;
+}
+
 .portrait picture {
   display: block;
   border-radius: 6px;
