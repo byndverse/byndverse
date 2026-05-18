@@ -77,10 +77,14 @@
     @media(max-width:760px){.site-nav{padding:1.25rem 1.25rem}.nav-logo-name{display:none}.nav-toggle{display:flex}.nav-links{display:flex;position:fixed;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:2.75rem;background:rgba(10,10,15,0.97);opacity:0;pointer-events:none;z-index:19}.nav-links.is-open{opacity:1;pointer-events:all}.orb,#starfield{display:none}.about-header{padding:6rem 1.5rem 0}.gallery-hero{margin-top:1.5rem;max-height:280px}}
     .biome-nav{position:relative;z-index:1;padding:2.5rem 2rem 5rem}
     .biome-nav-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
-    .biome-nav-card{display:flex;flex-direction:column;gap:0.4rem;padding:1.25rem 1.5rem;border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color var(--transition),background var(--transition)}
-    .biome-nav-card:hover{border-color:var(--border-acc);background:var(--accent-dim)}
-    .biome-nav-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--text)}
-    .biome-nav-tag{font-size:0.68rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted)}
+    .biome-nav-card{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:8px;text-decoration:none;overflow:hidden;transition:border-color var(--transition),transform var(--transition)}
+    .biome-nav-card:hover{border-color:var(--border-acc);transform:translateY(-3px)}
+    .biome-nav-card-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+    .biome-nav-card:hover .biome-nav-card-img{transform:scale(1.05)}
+    .biome-nav-card-body{padding:0.9rem 1.1rem 1.1rem;display:flex;flex-direction:column;gap:0.3rem}
+    .biome-nav-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--text)}
+    .biome-nav-tag{font-size:0.65rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted)}
+    @media(max-width:1000px){.biome-nav-inner{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:900px){.biome-nav-inner{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:560px){.biome-nav-inner{grid-template-columns:1fr}}
   </style>
@@ -266,24 +270,54 @@
   <nav class="biome-nav" aria-label="Browse by biome">
     <div class="biome-nav-inner">
       <a class="biome-nav-card" href="gallery/luminous-wilds.html">
-        <span class="biome-nav-name">The Luminous Wilds</span>
-        <span class="biome-nav-tag">Bioluminescent Forest Art</span>
+        <picture>
+          <source srcset="assets/gallery/gallery-9.webp" type="image/webp" />
+          <img class="biome-nav-card-img" src="assets/gallery/gallery-9.jpg" alt="The Luminous Wilds — bioluminescent forest art by BeLux Beyond" loading="lazy" decoding="async" />
+        </picture>
+        <div class="biome-nav-card-body">
+          <span class="biome-nav-name">The Luminous Wilds</span>
+          <span class="biome-nav-tag">Bioluminescent Forest Art</span>
+        </div>
       </a>
       <a class="biome-nav-card" href="gallery/the-drift.html">
-        <span class="biome-nav-name">The Drift</span>
-        <span class="biome-nav-tag">Dreamscape Wall Art</span>
+        <picture>
+          <source srcset="assets/gallery/gallery-2.webp" type="image/webp" />
+          <img class="biome-nav-card-img" src="assets/gallery/gallery-2.jpg" alt="The Drift — dreamscape wall art by BeLux Beyond" loading="lazy" decoding="async" />
+        </picture>
+        <div class="biome-nav-card-body">
+          <span class="biome-nav-name">The Drift</span>
+          <span class="biome-nav-tag">Dreamscape Wall Art</span>
+        </div>
       </a>
       <a class="biome-nav-card" href="gallery/outer-gardens.html">
-        <span class="biome-nav-name">The Outer Gardens</span>
-        <span class="biome-nav-tag">Cosmic Landscape Prints</span>
+        <picture>
+          <source srcset="assets/gallery/gallery-1.webp" type="image/webp" />
+          <img class="biome-nav-card-img" src="assets/gallery/gallery-1.jpg" alt="The Outer Gardens — cosmic landscape prints by BeLux Beyond" loading="lazy" decoding="async" />
+        </picture>
+        <div class="biome-nav-card-body">
+          <span class="biome-nav-name">The Outer Gardens</span>
+          <span class="biome-nav-tag">Cosmic Landscape Prints</span>
+        </div>
       </a>
       <a class="biome-nav-card" href="gallery/the-threshold.html">
-        <span class="biome-nav-name">The Threshold</span>
-        <span class="biome-nav-tag">Otherworldly Landscape Art</span>
+        <picture>
+          <source srcset="assets/gallery/gallery-3.webp" type="image/webp" />
+          <img class="biome-nav-card-img" src="assets/gallery/gallery-3.jpg" alt="The Threshold — otherworldly landscape art by BeLux Beyond" loading="lazy" decoding="async" />
+        </picture>
+        <div class="biome-nav-card-body">
+          <span class="biome-nav-name">The Threshold</span>
+          <span class="biome-nav-tag">Otherworldly Landscape Art</span>
+        </div>
       </a>
       <a class="biome-nav-card" href="gallery/the-quiet.html">
-        <span class="biome-nav-name">The Quiet</span>
-        <span class="biome-nav-tag">Meditative Landscape Art</span>
+        <picture>
+          <source srcset="assets/gallery/gallery-11.webp" type="image/webp" />
+          <img class="biome-nav-card-img" src="assets/gallery/gallery-11.jpg" alt="The Quiet — meditative landscape art by BeLux Beyond" loading="lazy" decoding="async" />
+        </picture>
+        <div class="biome-nav-card-body">
+          <span class="biome-nav-name">The Quiet</span>
+          <span class="biome-nav-tag">Meditative Landscape Art</span>
+        </div>
       </a>
     </div>
   </nav>
