@@ -50,7 +50,7 @@
     .will-reveal{opacity:0;transform:translateY(30px);transition:opacity var(--transition-slow),transform var(--transition-slow)}
     .will-reveal.is-revealed{opacity:1;transform:translateY(0)}
     .site-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 2rem;transition:background var(--transition),border-color var(--transition);border-bottom:1px solid transparent}
-    .site-nav.is-scrolled{background:rgba(10,10,15,0.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--border)}
+    .site-nav::before{content:'';position:absolute;inset:0;z-index:-1;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity var(--transition);pointer-events:none}.site-nav.is-scrolled{background:rgba(10,10,15,0.88);border-bottom-color:var(--border)}.site-nav.is-scrolled::before{opacity:1}
     .nav-logo{display:flex;align-items:center;gap:0.875rem}
     .hero-logo-wrap{display:block;position:relative;text-decoration:none;width:42px;height:42px;border-radius:50%;overflow:hidden;cursor:pointer;flex-shrink:0;border:1px solid rgba(200,149,58,0.32);transition:border-color var(--transition)}
     .hero-logo-wrap:hover{border-color:rgba(200,149,58,0.70)}

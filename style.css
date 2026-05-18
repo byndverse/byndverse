@@ -185,11 +185,25 @@ body {
   border-bottom: 1px solid transparent;
 }
 
-.site-nav.is-scrolled {
-  background: rgba(10, 10, 15, 0.88);
+.site-nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.site-nav.is-scrolled {
+  background: rgba(10, 10, 15, 0.88);
   border-bottom-color: var(--border);
+}
+
+.site-nav.is-scrolled::before {
+  opacity: 1;
 }
 
 .nav-logo {
