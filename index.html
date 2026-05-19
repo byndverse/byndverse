@@ -3,253 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0a0a0f" />
-  <link rel="canonical" href="https://byndverse.io" />
-  <title>BeLux Beyond — Visionary Art | The Beyondverse</title>
-  <meta name="description" content="Enter the Beyondverse — a world of visionary digital art by BeLux Beyond. Luminous landscapes, ethereal worlds, and art built from the dark, lit from within." />
+  <title>Salton Creative — SEO Content Writing for Australian Business</title>
+  <meta name="description" content="We write SEO-optimised blog articles that get your Australian business found on Google. Packages from $75 AUD. Keyword research, strategy, and polished writing — delivered to your inbox." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wordhubs.com/" />
 
-  <meta property="og:title" content="BeLux Beyond — The Beyondverse" />
-  <meta property="og:description" content="A named universe with real geography. The Luminous Wilds. The Drift. The Threshold. Visionary art by BeLux Beyond." />
-  <meta property="og:image" content="https://byndverse.io/assets/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="A luminous river at dusk, surrounded by glowing wildflowers — visionary art from the Beyondverse by BeLux Beyond" />
-  <meta property="og:url" content="https://byndverse.io" />
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="The Beyondverse" />
+  <meta property="og:title" content="Salton Creative — Your Business, Found." />
+  <meta property="og:description" content="SEO blog content that pulls your ideal customer toward you while you sleep. Packages from $75 AUD for Australian businesses." />
+  <meta property="og:url" content="https://wordhubs.com/" />
+  <meta property="og:image" content="https://wordhubs.com/assets/og-image.jpg" />
+  <meta property="og:locale" content="en_AU" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@beluxbeyond" />
-  <meta name="twitter:title" content="BeLux Beyond — The Beyondverse" />
-  <meta name="twitter:description" content="A named universe with real geography. The Luminous Wilds. The Drift. The Threshold. Visionary art by BeLux Beyond." />
-  <meta name="twitter:image" content="https://byndverse.io/assets/og-image.jpg" />
-  <meta name="twitter:image:alt" content="A luminous river at dusk, surrounded by glowing wildflowers — visionary art from the Beyondverse by BeLux Beyond" />
+  <meta name="twitter:title" content="Salton Creative — Your Business, Found." />
+  <meta name="twitter:description" content="SEO blog content for Australian businesses. Packages from $75 AUD." />
+  <meta name="twitter:image" content="https://wordhubs.com/assets/og-image.jpg" />
 
-  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="preload" as="image" href="assets/art/art-1.webp" fetchpriority="high" type="image/webp" />
-  <link rel="preload" as="image" href="assets/logo-sm.webp" fetchpriority="high" type="image/webp" />
+  <link rel="stylesheet" href="style.css" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" media="(min-width:761px)" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin media="(min-width:761px)" />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" media="(min-width:761px)" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" media="(min-width:761px)" /></noscript>
-
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#0a0a0f;--bg-2:#0d0d1a;--text:#f0ece0;--text-muted:rgba(240,236,224,0.52);--accent:#c8953a;--accent-dim:rgba(200,149,58,0.13);--border:rgba(240,236,224,0.07);--border-acc:rgba(200,149,58,0.20);--transition:0.4s cubic-bezier(0.4,0,0.2,1);--transition-slow:0.7s cubic-bezier(0.4,0,0.2,1)}
-    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-    body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-weight:400;overflow-x:hidden}
-    #starfield{position:fixed;inset:0;z-index:0;pointer-events:none}
-    .orb{position:fixed;border-radius:50%;filter:blur(110px);pointer-events:none;z-index:0;will-change:transform}
-    .orb-1{width:700px;height:700px;background:rgba(200,149,58,0.09);top:-200px;left:-150px;animation:drift1 20s ease-in-out infinite alternate}
-    .orb-2{width:550px;height:550px;background:rgba(60,40,120,0.14);bottom:-120px;right:-100px;animation:drift2 25s ease-in-out infinite alternate}
-    .orb-3{width:400px;height:400px;background:rgba(90,30,10,0.10);top:45%;left:55%;transform:translateX(-50%);animation:drift3 16s ease-in-out infinite alternate}
-    @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(100px,70px)}}
-    @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-70px,-90px)}}
-    @keyframes drift3{from{transform:translateX(-50%) scale(1)}to{transform:translateX(-50%) scale(1.35)}}
-    .particle{position:fixed;border-radius:50%;pointer-events:none;z-index:999}
-    .cursor-glow{position:fixed;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(200,149,58,0.07) 0%,transparent 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:0}
-    .will-reveal{opacity:0;transform:translateY(30px);transition:opacity var(--transition-slow),transform var(--transition-slow)}
-    .will-reveal.is-revealed{opacity:1;transform:translateY(0)}
-    .hero{position:relative;height:100svh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-    @supports not (height:100svh){.hero{height:100vh}}
-    .hero-bg{position:absolute;inset:0;z-index:1;display:block}
-    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-    .hero-overlay{position:absolute;inset:0;z-index:2;background:linear-gradient(to bottom,rgba(0,0,0,0.48) 0%,rgba(10,8,20,0.60) 55%,rgba(10,10,15,0.84) 100%)}
-    .hero-identity{position:absolute;top:0;left:0;z-index:4;padding:1.75rem 2rem;display:flex;align-items:center;gap:0.875rem}
-    .hero-logo-wrap{position:relative;width:42px;height:42px;border-radius:50%;overflow:hidden;cursor:pointer;flex-shrink:0;border:1px solid rgba(200,149,58,0.32);transition:border-color var(--transition)}
-    .hero-logo-wrap:hover{border-color:rgba(200,149,58,0.70)}
-    .hero-logo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero-identity-name{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-weight:500;letter-spacing:0.10em;color:rgba(240,236,224,0.60)}
-    .hero-content{position:relative;z-index:3;text-align:center;padding:0 1.5rem;max-width:840px;display:flex;flex-direction:column;align-items:center}
-    .hero-eyebrow{font-family:'Cormorant Garamond',serif;font-size:0.72rem;font-weight:500;letter-spacing:0.34em;color:var(--accent);text-transform:uppercase;margin-bottom:1.75rem;opacity:0;animation:heroFade 1.1s 0.2s ease forwards}
-    .hero-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8.5vw,6.5rem);font-weight:500;line-height:1.06;color:var(--text);margin-bottom:1.75rem;opacity:0;animation:heroFade 1.1s 0.45s ease forwards}
-    .hero-sub{font-family:'Inter',sans-serif;font-size:clamp(0.93rem,2vw,1.08rem);font-weight:300;color:rgba(240,236,224,0.60);letter-spacing:0.02em;line-height:1.72;max-width:460px;opacity:0;animation:heroFade 1.1s 0.70s ease forwards}
-    @keyframes heroFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    .scroll-cue{position:absolute;bottom:2.25rem;left:50%;transform:translateX(-50%);z-index:4;color:rgba(240,236,224,0.28);font-size:1.6rem;line-height:1;user-select:none;pointer-events:none;animation:scrollBounce 2.4s ease-in-out infinite}
-    @keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0);opacity:0.28}50%{transform:translateX(-50%) translateY(9px);opacity:0.62}}
-    @media(max-width:760px){.hero-identity{padding:1.25rem 1.25rem}.hero-identity-name{display:none}.orb,#starfield{display:none}}
-  </style>
-  <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="style.css" /></noscript>
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Salton Creative",
+    "description": "SEO blog and website copywriting for Australian businesses.",
+    "url": "https://wordhubs.com",
+    "areaServed": "AU",
+    "currenciesAccepted": "AUD",
+    "priceRange": "$$",
+    "slogan": "Your business, found."
+  }
+  </script>
 </head>
 <body>
 
-  <canvas id="starfield" aria-hidden="true"></canvas>
-  <div class="orb orb-1" aria-hidden="true"></div>
-  <div class="orb orb-2" aria-hidden="true"></div>
-  <div class="orb orb-3" aria-hidden="true"></div>
-
-  <!-- ── 1. Hero ────────────────────────────────────── -->
-  <section class="hero">
-
-    <picture class="hero-bg" aria-hidden="true">
-      <source srcset="assets/art/art-1.webp" type="image/webp" />
-      <img src="assets/art/art-1.jpg" alt="" fetchpriority="high" width="560" height="1000" />
-    </picture>
-    <div class="hero-overlay" aria-hidden="true"></div>
-
-    <div class="hero-identity">
-      <div class="hero-logo-wrap" role="button" tabindex="0" aria-label="BeLux Beyond">
-        <picture>
-          <source srcset="assets/logo-sm.webp" type="image/webp" />
-          <img src="assets/logo.jpg" alt="BeLux Beyond" width="80" height="80" />
-        </picture>
-      </div>
-      <span class="hero-identity-name">BeLux Beyond</span>
-    </div>
-
-    <div class="hero-content">
-      <p class="hero-eyebrow">The Beyondverse</p>
-      <h1 class="hero-heading">Built from the dark,<br>lit from within.</h1>
-      <p class="hero-sub">I make art so no one has to feel alone in the dark.</p>
-    </div>
-
-    <div class="scroll-cue" aria-hidden="true">&#8964;</div>
-
-  </section>
-
-  <!-- ── 2. Statement ──────────────────────────────── -->
-  <section class="statement" aria-label="World statement">
-    <div class="statement-inner">
-      <blockquote class="statement-quote">
-        &ldquo;The Beyondverse is not a style. It&rsquo;s a named universe — a real place with real geography.
-        The Luminous Wilds. The Drift. The Threshold. The Outer Gardens.
-        You don&rsquo;t view it. You enter it.&rdquo;
-      </blockquote>
-      <p class="statement-attr">— BeLux Beyond, Visionary Artist</p>
-    </div>
-  </section>
-
-  <!-- ── 3. Artworld ─────────────────────────────────── -->
-  <section class="artworld" aria-label="Artwork">
-    <div class="artworld-grid">
-
-      <article class="art-piece">
-        <button class="art-img-wrap" type="button" aria-label="View Where the Light Remembers in full screen">
-          <picture>
-            <source srcset="assets/art/art-1.webp" type="image/webp" />
-            <img src="assets/art/art-1.jpg" alt="Where the Light Remembers — a lone figure stands before a colossal glowing tree, its bark alive with veins of cyan light, purple luminescence flooding the forest around it" loading="lazy" decoding="async" width="560" height="1000" />
-          </picture>
-        </button>
-        <div class="art-meta">
-          <p class="art-biome">The Luminous Wilds</p>
-          <h2 class="art-name">Where the Light Remembers</h2>
-          <p class="art-desc">The light was always there. You just had to wander far enough to find it.</p>
-        </div>
-      </article>
-
-      <article class="art-piece">
-        <button class="art-img-wrap" type="button" aria-label="View Dissolution in full screen">
-          <picture>
-            <source srcset="assets/art/art-4.webp" type="image/webp" />
-            <img src="assets/art/art-4.jpg" alt="Dissolution — a serene human face melts into swirling waves of teal, crimson, and gold, as if the self is dissolving into the fabric of the cosmos" loading="lazy" decoding="async" width="512" height="512" />
-          </picture>
-        </button>
-        <div class="art-meta">
-          <p class="art-biome">The Outer Gardens</p>
-          <h2 class="art-name">Dissolution</h2>
-          <p class="art-desc">Where the self becomes the sea. You don&rsquo;t dissolve here. You expand.</p>
-        </div>
-      </article>
-
-      <article class="art-piece">
-        <button class="art-img-wrap" type="button" aria-label="View Dream Door in full screen">
-          <picture>
-            <source srcset="assets/art/art-3.webp" type="image/webp" />
-            <img src="assets/art/art-3.jpg" alt="Dream Door — a lone figure walks toward a towering stone archway ablaze with amber light, purple wildflowers lining the path beneath a twilight sky" loading="lazy" decoding="async" width="800" height="1427" />
-          </picture>
-        </button>
-        <div class="art-meta">
-          <p class="art-biome">The Threshold</p>
-          <h2 class="art-name">Dream Door</h2>
-          <p class="art-desc">You've been standing at this door your whole life. You already know what's on the other side. Enter the Beyondverse 🔥</p>
-        </div>
-      </article>
-
-      <article class="art-piece">
-        <button class="art-img-wrap" type="button" aria-label="View Adrift in full screen">
-          <picture>
-            <source srcset="assets/art/art-2.webp" type="image/webp" />
-            <img src="assets/art/art-2.jpg" alt="Adrift — a lone wooden boat rests on mirror-still water, mist-shrouded rock formations rising in the distance beneath a soft pink and teal dawn sky" loading="lazy" decoding="async" width="800" height="1427" />
-          </picture>
-        </button>
-        <div class="art-meta">
-          <p class="art-biome">The Drift</p>
-          <h2 class="art-name">Adrift</h2>
-          <p class="art-desc">Between sleeping and waking. Between here and somewhere else. Welcome back to the Beyondverse.</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ── 4. About ────────────────────────────────────── -->
-  <section class="about" aria-label="About BeLux Beyond">
-    <div class="about-inner">
-      <p class="about-text">
-        There was a time art was the only light. Not metaphorically — literally, practically.
-        I learned to build worlds so I had somewhere real to go when this one got too dark.
-        The Beyondverse started as that place. It became a home for everyone who needed the same thing.
-        You can live there too.
-      </p>
-      <p class="about-signoff">Welcome back to the Beyondverse.</p>
-    </div>
-  </section>
-
-  <!-- ── 5. Drifters ──────────────────────────────── -->
-  <section class="drifters" aria-label="Join the Drifters">
-    <div class="drifters-inner">
-      <h2 class="drifters-heading">Become a Drifter</h2>
-      <p class="drifters-sub">
-        Drifters don&rsquo;t just follow the Beyondverse. They inhabit it.<br>
-        New drifts, world lore, and sanctuary pieces — straight to you.
-      </p>
-      <a class="drifters-cta" href="https://beluxbeyond.substack.com" target="_blank" rel="noopener noreferrer">
-        Enter the Drift
-      </a>
-    </div>
-  </section>
-
-  <!-- ── 6. Footer ────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <ul class="footer-links">
-        <li>
-          <a class="footer-link" href="https://beluxbeyond.substack.com" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-            Substack
-          </a>
-        </li>
-        <li>
-          <a class="footer-link" href="https://instagram.com/beluxbeyond" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            Instagram
-          </a>
-        </li>
-        <li>
-          <a class="footer-link" href="https://youtube.com/@byndverse" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            YouTube
-          </a>
-        </li>
-        <li>
-          <a class="footer-link" href="https://x.com/beluxbeyond" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            X
-          </a>
-        </li>
-        <li>
-          <a class="footer-link" href="https://threads.net/@beluxbeyond" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.473 12.01v-.017c.03-3.579.882-6.43 2.525-8.482C5.868 1.2 8.617.024 12.198 0h.014c2.959.017 5.487.816 7.518 2.376 1.885 1.45 3.138 3.492 3.713 6.07l-2.498.368c-.897-3.885-3.417-5.862-7.74-5.888-2.96.013-5.174.896-6.582 2.625-1.318 1.613-1.985 3.989-2.009 7.06.024 3.068.69 5.442 2.009 7.053 1.408 1.723 3.623 2.604 6.587 2.617 2.651-.013 4.39-.695 5.635-2.252 1.32-1.647 2.011-4.165 2.011-7.48v-.085h2.5c0 3.74-.818 6.663-2.431 8.688-1.69 2.117-4.274 3.189-7.746 3.218zm4.888-10.43c-.06-.323-.137-.636-.236-.942-.586-1.8-1.888-2.832-3.847-3.067-.32-.038-.65-.057-.985-.057-1.63 0-2.964.574-3.96 1.706-.84.952-1.306 2.24-1.381 3.824-.075 1.595.258 2.966 1.01 4.073.77 1.138 1.936 1.8 3.36 1.934.216.02.434.03.653.03 1.436 0 2.669-.453 3.659-1.345.98-.881 1.55-2.11 1.695-3.652l.032-.504z"/></svg>
-            Threads
-          </a>
-        </li>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">Salton <span>Creative</span></a>
+      <ul class="nav-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="services.html" class="btn btn-primary">Get Started</a></li>
       </ul>
-      <p class="footer-signoff">&ldquo;The Dream Is Real.&rdquo; — Welcome back to the Beyondverse.</p>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" role="menu">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="services.html" class="btn btn-primary" style="margin-top:12px;text-align:center;justify-content:center;">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <span class="hero-overline">SEO Content Writing for Australian Business</span>
+      <h1>The ones people find.<br>And the ones people never knew existed.</h1>
+      <p class="hero-sub">Right now, someone in your city is searching Google for exactly what you offer. They're ready. They have money. They just need to find you first.</p>
+      <div class="hero-ctas">
+        <a href="services.html" class="btn btn-primary btn-lg">See Packages →</a>
+        <a href="#how-it-works" class="btn btn-outline btn-lg">How it works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="will-reveal">
+          <div class="problem-stat">68%</div>
+          <p class="problem-label">Of online experiences begin with search</p>
+          <p class="problem-text">Most businesses never show up. Not because they're not good enough. Because nobody told their story in a way Google — and their customers — could find.</p>
+        </div>
+        <div class="will-reveal" style="transition-delay:0.12s">
+          <div class="problem-stat">2 kinds.</div>
+          <p class="problem-label">Of businesses in every market</p>
+          <p class="problem-text">There are the ones people find — and the ones people never knew existed. The difference isn't quality. It's content. Consistent, strategic, well-written content that builds trust and earns rankings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="value-prop">
+    <div class="container">
+      <div class="value-grid">
+        <div class="will-reveal">
+          <span class="section-label">We Tell Your Story</span>
+          <h2 class="section-title">A blog isn't a blog.<br>In the right hands.</h2>
+          <div class="value-pull">"A 24-hour salesperson. A trust builder. A Google magnet that pulls your ideal customer toward you while you sleep."</div>
+          <a href="services.html" class="btn btn-outline-dark">See what's included →</a>
+        </div>
+        <div class="value-right will-reveal" style="transition-delay:0.12s">
+          <p>That's what great content does. Not just sit there. Work.</p>
+          <p>We write articles so precisely crafted — so tuned to your customer and your voice — that reading them feels less like marketing and more like a conversation they've been waiting to have.</p>
+          <p>Every article is grounded in keyword research, shaped around your ideal customer, and written to rank. Not just to fill a page. To work for you, every single day.</p>
+          <p>We work with Australian businesses of every size — tradies, clinics, retailers, consultants, cafés — anyone who deserves to be found online but hasn't been yet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how-it-works">
+    <div class="container">
+      <span class="section-label">The Process</span>
+      <h2 class="section-title">And it couldn't be simpler.</h2>
+      <p class="section-sub">Tell us who you are. Tell us who you want to reach. We do everything else.</p>
+      <div class="steps">
+        <div class="step will-reveal"><div class="step-number">01</div><h3>Tell us who you are</h3><p>Fill out a short brief about your business, your customers, and your goals. No jargon required — just tell us your story.</p></div>
+        <div class="step will-reveal" style="transition-delay:0.1s"><div class="step-number">02</div><h3>We research, strategise, and write</h3><p>We handle keyword research, topic strategy, SEO formatting, and copywriting. You don't lift a finger.</p></div>
+        <div class="step will-reveal" style="transition-delay:0.2s"><div class="step-number">03</div><h3>Article in your inbox. Done.</h3><p>A polished, publish-ready article lands in your inbox — complete with meta description. Up to 3 revisions included.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages">
+    <div class="container">
+      <div class="packages-intro">
+        <div>
+          <span class="section-label">Packages &amp; Pricing</span>
+          <h2 class="section-title">Choose your plan.</h2>
+          <p class="section-sub">Every package includes keyword research, SEO formatting, meta description, and 3 revisions. Delivered digitally to any Australian business.</p>
+        </div>
+        <a href="services.html" class="btn btn-outline-dark" style="white-space:nowrap">Full details →</a>
+      </div>
+      <div class="packages-grid">
+        <div class="pkg-card will-reveal"><p class="pkg-name">Starter</p><div class="pkg-price"><sup>$</sup>75</div><p class="pkg-aud">AUD · 1 article</p><p class="pkg-desc">One polished, SEO-ready article of 800–1000 words. Perfect for testing the water or adding a one-off piece to your site.</p><a href="services.html#starter" class="btn btn-outline-dark">Get started →</a></div>
+        <div class="pkg-card featured will-reveal" style="transition-delay:0.08s"><span class="pkg-badge">Most popular</span><p class="pkg-name">Growth</p><div class="pkg-price"><sup>$</sup>260</div><p class="pkg-aud">AUD · 4 articles/month</p><p class="pkg-desc">Weekly publishing keeps your site active, your rankings climbing, and your customers engaged. The sweet spot for most businesses.</p><a href="services.html#growth" class="btn btn-primary">Get started →</a></div>
+        <div class="pkg-card will-reveal" style="transition-delay:0.16s"><p class="pkg-name">Authority</p><div class="pkg-price"><sup>$</sup>480</div><p class="pkg-aud">AUD · 8 articles/month</p><p class="pkg-desc">Twice-weekly content that builds serious domain authority and positions you as the go-to expert in your field.</p><a href="services.html#authority" class="btn btn-outline-dark">Get started →</a></div>
+        <div class="pkg-card will-reveal" style="transition-delay:0.24s"><p class="pkg-name">Brand Builder</p><div class="pkg-price"><sup>$</sup>680</div><p class="pkg-aud">AUD · 12 articles + content calendar</p><p class="pkg-desc">Our most comprehensive package. Three articles per week plus a full content calendar mapping your strategy for the month ahead.</p><a href="services.html#brand-builder" class="btn btn-outline-dark">Get started →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="includes">
+    <div class="container">
+      <div class="includes-top">
+        <span class="section-label" style="color:var(--accent)">Included in every article</span>
+        <h2 class="includes-headline">No extras. No surprises.<br>Everything you need to publish with confidence.</h2>
+      </div>
+      <div class="includes-grid">
+        <div class="include-item will-reveal"><h4>Keyword Research</h4><p>We find the exact terms your customers are searching and build your article around them.</p></div>
+        <div class="include-item will-reveal" style="transition-delay:0.08s"><h4>SEO Formatting</h4><p>Proper heading structure, internal link suggestions, and copy optimised for search and readability.</p></div>
+        <div class="include-item will-reveal" style="transition-delay:0.16s"><h4>Meta Description</h4><p>A compelling meta description ready to paste into your CMS — crafted to boost click-through rates.</p></div>
+        <div class="include-item will-reveal" style="transition-delay:0.24s"><h4>3 Revisions</h4><p>We refine until it's right. Your voice, your brand, your standards — we don't stop until you're happy.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="container">
+      <h2>Your business, found.</h2>
+      <p>Join Australian businesses who are showing up — and being chosen — every single day.</p>
+      <div class="cta-gap">
+        <a href="services.html" class="btn btn-lg" style="background:var(--bg-dark);color:var(--white);border-color:var(--bg-dark);">See Packages →</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div><div class="footer-logo">Salton <span>Creative</span></div><p class="footer-tagline">Your business, found.</p></div>
+        <ul class="footer-links"><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Salton Creative. All rights reserved.</span>
+        <span>Delivered digitally &middot; Anywhere in Australia</span>
+      </div>
     </div>
   </footer>
-
-  <script src="main.js" defer></script>
+  <script src="main.js"></script>
 </body>
 </html>
