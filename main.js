@@ -276,7 +276,7 @@
 
   /* ── Scroll reveal ────────────────────────────────── */
 
-  const revealEls = document.querySelectorAll('.statement, .art-piece, .about, .drifters, .site-footer');
+  const revealEls = document.querySelectorAll('.statement, .art-piece, .wallpaper-card, .about, .drifters, .site-footer');
   revealEls.forEach(el => el.classList.add('will-reveal'));
 
   const observer = new IntersectionObserver((entries) => {

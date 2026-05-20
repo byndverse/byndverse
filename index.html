@@ -90,9 +90,10 @@
   <!-- ── Nav overlay ──────────────────────────────── -->
   <nav class="nav-overlay" id="nav-overlay" aria-label="Site navigation" aria-hidden="true">
     <ul class="nav-links">
-      <li><a class="nav-link" href="#artworld">The Artworld</a></li>
+      <li><a class="nav-link" href="#hero">Home</a></li>
+      <li><a class="nav-link" href="#artworld">Gallery</a></li>
+      <li><a class="nav-link" href="#wallpapers">Wallpapers</a></li>
       <li><a class="nav-link" href="#about">About</a></li>
-      <li><a class="nav-link" href="#drifters">Become a Drifter</a></li>
     </ul>
     <ul class="nav-social-links">
       <li>
@@ -129,7 +130,7 @@
   </nav>
 
   <!-- ── 1. Hero ────────────────────────────────────── -->
-  <section class="hero">
+  <section id="hero" class="hero">
 
     <picture class="hero-bg" aria-hidden="true">
       <source srcset="assets/art/art-1.webp" type="image/webp" />
@@ -232,7 +233,63 @@
     </div>
   </section>
 
-  <!-- ── 4. About ────────────────────────────────────── -->
+  <!-- ── 4. Wallpapers ────────────────────────────────── -->
+  <section id="wallpapers" class="wallpapers" aria-label="Free wallpapers">
+    <div class="wallpapers-inner">
+      <p class="wallpapers-eyebrow">Free for you</p>
+      <h2 class="wallpapers-heading">Carry the Beyondverse</h2>
+      <p class="wallpapers-sub">Download any piece. Set it as your screen. Bring the light with you.</p>
+      <div class="wallpapers-grid">
+
+        <article class="wallpaper-card">
+          <a class="wallpaper-img-wrap" href="assets/art/art-1.jpg" download="BeLux-Beyond_Where-the-Light-Remembers.jpg" aria-label="Download Where the Light Remembers">
+            <picture>
+              <source srcset="assets/art/art-1.webp" type="image/webp" />
+              <img src="assets/art/art-1.jpg" alt="Where the Light Remembers" loading="lazy" decoding="async" width="560" height="1000" />
+            </picture>
+            <span class="wallpaper-dl-badge" aria-hidden="true">↓ Download</span>
+          </a>
+          <p class="wallpaper-name">Where the Light Remembers</p>
+        </article>
+
+        <article class="wallpaper-card">
+          <a class="wallpaper-img-wrap" href="assets/art/art-4.jpg" download="BeLux-Beyond_Dissolution.jpg" aria-label="Download Dissolution">
+            <picture>
+              <source srcset="assets/art/art-4.webp" type="image/webp" />
+              <img src="assets/art/art-4.jpg" alt="Dissolution" loading="lazy" decoding="async" width="512" height="512" />
+            </picture>
+            <span class="wallpaper-dl-badge" aria-hidden="true">↓ Download</span>
+          </a>
+          <p class="wallpaper-name">Dissolution</p>
+        </article>
+
+        <article class="wallpaper-card">
+          <a class="wallpaper-img-wrap" href="assets/art/art-3.jpg" download="BeLux-Beyond_Dream-Door.jpg" aria-label="Download Dream Door">
+            <picture>
+              <source srcset="assets/art/art-3.webp" type="image/webp" />
+              <img src="assets/art/art-3.jpg" alt="Dream Door" loading="lazy" decoding="async" width="800" height="1427" />
+            </picture>
+            <span class="wallpaper-dl-badge" aria-hidden="true">↓ Download</span>
+          </a>
+          <p class="wallpaper-name">Dream Door</p>
+        </article>
+
+        <article class="wallpaper-card">
+          <a class="wallpaper-img-wrap" href="assets/art/art-2.jpg" download="BeLux-Beyond_Adrift.jpg" aria-label="Download Adrift">
+            <picture>
+              <source srcset="assets/art/art-2.webp" type="image/webp" />
+              <img src="assets/art/art-2.jpg" alt="Adrift" loading="lazy" decoding="async" width="800" height="1427" />
+            </picture>
+            <span class="wallpaper-dl-badge" aria-hidden="true">↓ Download</span>
+          </a>
+          <p class="wallpaper-name">Adrift</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. About ────────────────────────────────────── -->
   <section id="about" class="about" aria-label="About BeLux Beyond">
     <div class="about-inner">
       <p class="about-text">

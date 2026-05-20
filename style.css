@@ -487,6 +487,135 @@ body {
   transform: translateY(-50%) scale(1.08);
 }
 
+/* ── Wallpapers ───────────────────────────────────────── */
+
+.wallpapers {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-2);
+  padding: 7rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.wallpapers-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wallpapers-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.wallpapers-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.wallpapers-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.72;
+  margin-bottom: 4rem;
+}
+
+.wallpapers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: left;
+}
+
+.wallpaper-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.wallpaper-img-wrap {
+  display: block;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  text-decoration: none;
+  transition: box-shadow var(--transition);
+}
+
+.wallpaper-img-wrap picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wallpaper-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wallpaper-img-wrap:hover,
+.wallpaper-img-wrap:focus-visible {
+  box-shadow: 0 0 50px rgba(200, 149, 58, 0.22), 0 20px 60px rgba(0, 0, 0, 0.55);
+  outline: none;
+}
+
+.wallpaper-img-wrap:hover img,
+.wallpaper-img-wrap:focus-visible img {
+  transform: scale(1.04);
+}
+
+.wallpaper-dl-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(10, 10, 15, 0.82);
+  border: 1px solid rgba(200, 149, 58, 0.45);
+  color: var(--accent);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--transition), transform var(--transition);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.wallpaper-img-wrap:hover .wallpaper-dl-badge,
+.wallpaper-img-wrap:focus-visible .wallpaper-dl-badge {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.wallpaper-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
 /* ── About ────────────────────────────────────────────── */
 
 .about {
@@ -730,9 +859,10 @@ body {
   transform: translateY(0);
 }
 
-.nav-overlay.is-open .nav-links li:nth-child(1) .nav-link { transition-delay: 0.15s; }
-.nav-overlay.is-open .nav-links li:nth-child(2) .nav-link { transition-delay: 0.23s; }
-.nav-overlay.is-open .nav-links li:nth-child(3) .nav-link { transition-delay: 0.31s; }
+.nav-overlay.is-open .nav-links li:nth-child(1) .nav-link { transition-delay: 0.13s; }
+.nav-overlay.is-open .nav-links li:nth-child(2) .nav-link { transition-delay: 0.20s; }
+.nav-overlay.is-open .nav-links li:nth-child(3) .nav-link { transition-delay: 0.27s; }
+.nav-overlay.is-open .nav-links li:nth-child(4) .nav-link { transition-delay: 0.34s; }
 
 .nav-link:hover,
 .nav-link:focus-visible {
@@ -749,7 +879,7 @@ body {
   border-top: 1px solid rgba(200, 149, 58, 0.18);
   padding-top: 2.25rem;
   opacity: 0;
-  transition: opacity 0.45s ease 0.42s;
+  transition: opacity 0.45s ease 0.48s;
 }
 
 .nav-overlay.is-open .nav-social-links {
@@ -791,6 +921,13 @@ body {
 
   .artworld { padding: 4rem 1.25rem; }
 
+  .wallpapers { padding: 5rem 1.25rem; }
+
+  .wallpapers-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
   .statement,
   .about,
   .drifters { padding: 6rem 1.5rem; }
@@ -807,4 +944,6 @@ body {
 @media (max-width: 480px) {
   .lightbox-prev { left: 0.5rem; }
   .lightbox-next { right: 0.5rem; }
+
+  .wallpapers-grid { grid-template-columns: 1fr; }
 }
