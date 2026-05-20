@@ -239,6 +239,41 @@
     }
   }
 
+  /* ── Hamburger nav ────────────────────────────────── */
+
+  const navToggle  = document.querySelector('.nav-toggle');
+  const navOverlay = document.querySelector('.nav-overlay');
+  const navLinks   = document.querySelectorAll('.nav-link');
+
+  if (navToggle && navOverlay) {
+    function openNav() {
+      navOverlay.classList.add('is-open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      navLinks[0]?.focus();
+    }
+
+    function closeNav() {
+      navOverlay.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      navToggle.focus();
+    }
+
+    navToggle.addEventListener('click', () => {
+      if (navToggle.getAttribute('aria-expanded') === 'true') closeNav();
+      else openNav();
+    });
+
+    navLinks.forEach(link => link.addEventListener('click', closeNav));
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navOverlay.classList.contains('is-open')) closeNav();
+    });
+  }
+
   /* ── Scroll reveal ────────────────────────────────── */
 
   const revealEls = document.querySelectorAll('.statement, .art-piece, .about, .drifters, .site-footer');
