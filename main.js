@@ -1,5 +1,44 @@
 (function () {
 
+  /* ── Hamburger nav ────────────────────────────────── */
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navOverlay = document.getElementById('site-nav');
+
+  if (navToggle && navOverlay) {
+    function openNav() {
+      navOverlay.classList.add('is-open');
+      navOverlay.setAttribute('aria-hidden', 'false');
+      navToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      navOverlay.querySelector('.nav-link').focus();
+    }
+
+    function closeNav() {
+      navOverlay.classList.remove('is-open');
+      navOverlay.setAttribute('aria-hidden', 'true');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      navToggle.focus();
+    }
+
+    navToggle.addEventListener('click', () => {
+      navToggle.getAttribute('aria-expanded') === 'true' ? closeNav() : openNav();
+    });
+
+    navOverlay.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    navOverlay.addEventListener('click', e => {
+      if (e.target === navOverlay) closeNav();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navOverlay.classList.contains('is-open')) closeNav();
+    });
+  }
+
   const isMobile = window.innerWidth <= 760;
 
   function lerp(a, b, t) { return a + (b - a) * t; }
