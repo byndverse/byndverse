@@ -146,9 +146,25 @@
     animateGlow();
   }
 
+  /* ── Header scroll state ─────────────────────────── */
+
+  const siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    const onScroll = () => siteHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    siteHeader.querySelector('.site-header-logo').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    siteHeader.querySelector('.site-header-logo').addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   /* ── Logo burst + coin-flip ───────────────────────── */
 
-  const logoWrap = document.querySelector('.hero-logo-wrap');
+  const logoWrap = document.querySelector('.site-header-logo');
   if (logoWrap) {
     const COLORS = ['#c8953a', '#f0ece0', '#b47bff', '#7ec8e3', '#ff6ecb'];
     let isSpinning = false;
